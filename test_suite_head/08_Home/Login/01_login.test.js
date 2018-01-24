@@ -1,0 +1,85 @@
+"@fixture 01_Login";
+"@page http://5.peter.pf-berlin.de/login";
+
+
+"@test"["01_root"] = {
+    "1.Wait 7000 milliseconds": function() {
+        act.wait(7e3);
+    },
+    '2.Type in input "login"': function() {
+        var actionTarget = function() {
+            return $("#login_form").find("[name='login']");
+        };
+        act.type(actionTarget, "root");
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    '3.Type in password input "password"': function() {
+        var actionTarget = function() {
+            return $("#login_form").find("[name='password']");
+        };
+        act.type(actionTarget, "admin");
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    '4.Click span "Anmelden"': function() {
+        var actionTarget = function() {
+            return $(".cui-button-center").find(" > span:nth(0)").eq(4);
+        };
+        act.click(actionTarget);
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    "5.Assert": function() {
+        eq($(".cui-button-center").find(" > span:nth(0)").eq(0).text(), "Root");
+    }
+};
+
+
+"@test"["02_root_keep_logged_in"] = {
+    "1.Wait 7000 milliseconds": function() {
+        act.wait(7e3);
+    },
+    '2.Type in input "login"': function() {
+        var actionTarget = function() {
+            return $("#login_form").find("[name='login']");
+        };
+        act.type(actionTarget, "root");
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    '3.Type in password input "password"': function() {
+        var actionTarget = function() {
+            return $("#login_form").find("[name='password']");
+        };
+        act.type(actionTarget, "admin");
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    '4.Click span "Angemeldet bleiben..."': function() {
+        var actionTarget = function() {
+            return $(".cui-button-center").find(" > span:nth(0)").eq(3);
+        };
+        act.click(actionTarget);
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    '5.Click span "Anmelden"': function() {
+        var actionTarget = function() {
+            return $(".cui-button-center").find(" > span:nth(0)").eq(4);
+        };
+        act.click(actionTarget);
+    },
+    "Take a screenshot": function() {
+        act.screenshot();
+    },
+    "6.Assert": function() {
+        eq($(".cui-button-center").find(" > span:nth(0)").eq(0).text(), "Root");
+    }
+};
