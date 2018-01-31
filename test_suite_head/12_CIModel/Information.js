@@ -13,9 +13,7 @@ fixture `Information`
 test('Information', async t => {
     const body = await Selector('body');
     let text = await body.innerText;
-    let text1 = await body[0].innerText;
     console.log(text)
-    console.log(text1)
 
     await t
         .wait(5000)
