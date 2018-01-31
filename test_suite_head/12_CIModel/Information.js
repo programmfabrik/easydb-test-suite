@@ -6,6 +6,7 @@ import { Selector } from 'testcafe';
 
 fixture `Information`
     .page `http://5.peter.pf-berlin.de/?login=root&password=admin`;
+    .beforeEach(t => t.resizeWindow(1920, 1080))
 
 
 
