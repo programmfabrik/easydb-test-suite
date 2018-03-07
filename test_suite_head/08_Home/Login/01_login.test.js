@@ -1,5 +1,5 @@
 "@fixture 01_Login";
-"@page http://5.peter.pf-berlin.de/login";
+"@page http://10.122.4.25/login";
 
 
 "@test"["01_root"] = {

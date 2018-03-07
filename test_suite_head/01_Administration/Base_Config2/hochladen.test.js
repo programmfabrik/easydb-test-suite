@@ -1,5 +1,5 @@
 "@fixture 01_Base Config";
-"@page http://5.peter.pf-berlin.de/?login=root&password=admin";
+"@page http://10.122.4.25/?login=root&password=admin";
 
 
 "@test"["03_Hochladen"] = {

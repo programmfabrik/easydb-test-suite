@@ -1,5 +1,5 @@
 "@fixture 02_Click Everything in Export Manager";
-"@page http://5.peter.pf-berlin.de/search?login=root&password=admin";
+"@page http://10.122.4.25/search?login=root&password=admin";
 
 
 

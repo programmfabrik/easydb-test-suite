@@ -1,5 +1,5 @@
 "@fixture Lists";
-"@page http://5.peter.pf-berlin.de/lists/?login=root&password=admin";
+"@page http://10.122.4.25/lists/?login=root&password=admin";
 
 "@test"["01_Lists Main Bar"] = {
     "1.Wait 5000 milliseconds": function() {

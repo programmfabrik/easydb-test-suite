@@ -1,5 +1,5 @@
 "@fixture 03_Search for Schlagworter";
-"@page http://5.peter.pf-berlin.de/search?login=root&password=admin";
+"@page http://10.122.4.25/search?login=root&password=admin";
 
 "@test"["Select Cafe Schlagwort and first asset"] = {
     "1.Wait 5000 milliseconds": function() {

@@ -1,5 +1,5 @@
 "@fixture 04_Gruppen NEW";
-"@page http://5.peter.pf-berlin.de/groupmanager/?login=root&password=admin";
+"@page http://10.122.4.25/groupmanager/?login=root&password=admin";
 
 
 

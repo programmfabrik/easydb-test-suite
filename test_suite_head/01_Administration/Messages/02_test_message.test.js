@@ -1,5 +1,5 @@
 "@fixture 02_Test Message";
-"@page http://5.peter.pf-berlin.de/?login=root&password=admin";
+"@page http://10.122.4.25/?login=root&password=admin";
 
 "@test"["Test Message"] = {
     "2.Wait 5000 milliseconds": function() {

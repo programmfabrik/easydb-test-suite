@@ -1,5 +1,5 @@
 "@fixture Metadaten Mapping";
-"@page http://5.peter.pf-berlin.de/metadata/?login=root&password=admin";
+"@page http://10.122.4.25/metadata/?login=root&password=admin";
 
 
 "@test"["import_meta"] = {

@@ -1,5 +1,5 @@
 "@fixture Events";
-"@page http://5.peter.pf-berlin.de/eventmanager/?login=root&password=admin";
+"@page http://10.122.4.25/eventmanager/?login=root&password=admin";
 
 "@test"["02_Choose Event Type"] = {
     "1.Wait 5000 milliseconds": function() {

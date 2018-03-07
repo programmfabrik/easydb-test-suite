@@ -1,5 +1,5 @@
 "@fixture 03_Base Config Interact";
-"@page http://5.peter.pf-berlin.de/configmanager?login=root&password=admin";
+"@page http://10.122.4.25/configmanager?login=root&password=admin";
 
 "@test"["Anmelden Click Everything"] = {
     "1.Wait 5000 milliseconds": function() {

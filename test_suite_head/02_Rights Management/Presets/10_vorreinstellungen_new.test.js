@@ -1,5 +1,5 @@
 "@fixture 10_Vorreinstellungen NEW";
-"@page http://5.peter.pf-berlin.de/rightpresetmanager/?login=root&password=admin";
+"@page http://10.122.4.25/rightpresetmanager/?login=root&password=admin";
 
 
 

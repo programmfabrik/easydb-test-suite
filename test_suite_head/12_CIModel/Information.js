@@ -5,7 +5,7 @@ import { Selector } from 'testcafe';
 
 
 fixture `Information`
-    .page `http://5.peter.pf-berlin.de/?login=root&password=admin`
+    .page `http://10.122.4.25/?login=root&password=admin`
     .beforeEach(t => t.resizeWindow(1920, 1080));
 
 

@@ -1,5 +1,5 @@
 "@fixture 08_Pools NEW";
-"@page http://5.peter.pf-berlin.de/poolmanager/?login=root&password=admin";
+"@page http://10.122.4.25/poolmanager/?login=root&password=admin";
 
 
 

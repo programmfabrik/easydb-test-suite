@@ -1,5 +1,5 @@
 "@fixture 04_Delete Workflows";
-"@page http://5.peter.pf-berlin.de/tagmanager/?login=root&password=admin";
+"@page http://10.122.4.25/tagmanager/?login=root&password=admin";
 
 
 

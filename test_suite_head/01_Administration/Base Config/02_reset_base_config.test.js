@@ -1,5 +1,5 @@
 "@fixture 02_Reset Base Config";
-"@page http://5.peter.pf-berlin.de/?login=root&password=admin";
+"@page http://10.122.4.25/?login=root&password=admin";
 
 "@test"["Remove Upload Limit"] = {
     "1.Wait 50 milliseconds": function() {

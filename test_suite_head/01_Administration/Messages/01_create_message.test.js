@@ -1,5 +1,5 @@
 "@fixture 01_Create Message";
-"@page http://5.peter.pf-berlin.de/adminmessagesmanager/?login=root&password=admin";
+"@page http://10.122.4.25/adminmessagesmanager/?login=root&password=admin";
 
 
 "@test"["Create Message"] = {
