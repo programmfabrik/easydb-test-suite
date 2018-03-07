@@ -105,8 +105,8 @@
     '7.Click span "Teilen"': function() {
         act.click('[tab="share"] .cui-button-center');
     },
-    '8.Click span "Berechtigungen..."': function() {
-        act.click("#button-text-2992");
+    '3.Click span "Berechtigungen..."': function() {
+        act.click(":containsExcludeChildren(Berechtigungen übergeordneter Mappen ignorieren)");
     },
     "9.Click bars": function() {
         act.click('[col="6"] .fa-bars');

@@ -15,7 +15,7 @@
         act.click(actionTarget);
     },
     "4.Type in input": function() {
-        act.type(".cui-form-field-name--input input", "BMW");
+        act.type('[cui-data-field-name="displayname"] [cui-data-field-name="de-DE"] input', "BMW");
     },
     '5.Click span "Speichern"': function() {
         act.click(":containsExcludeChildren(Speichern)");
