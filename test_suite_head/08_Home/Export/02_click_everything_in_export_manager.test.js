@@ -117,7 +117,7 @@
     },
     '4.Click span "Daten"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Daten)").eq(6);
+            return $('[data-qa="export-manager-data-tab-button"] .cui-button-center');
         };
         act.click(actionTarget);
     },

@@ -1831,7 +1831,7 @@
 
 "@test"["06_Dateien"] = {
     "1.Wait 4000 milliseconds": function() {
-        act.wait(4e3);
+        act.wait(6e3);
     },
     "2.Click <i>": function() {
         var actionTarget = function() {

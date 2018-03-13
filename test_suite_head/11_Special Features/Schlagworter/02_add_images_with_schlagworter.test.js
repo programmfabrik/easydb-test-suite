@@ -35,8 +35,11 @@
     "8.Type in input": function() {
         act.type('[ez5-field-name="daten_mit_schlagwort.schlagwort"] input', "cafe");
     },
-    '9.Click span ""cafe" neu anlegen."': function() {
-        act.click(":containsExcludeChildren(cafe neu anlegen)");
+    '9.Click span "Editor öffnen"': function() {
+        act.click('[title="search.mini.result.manager.new_object"] .cui-button-center');
+    },
+    '10.Click span "Speichern"': function() {
+        act.click('[ez5-mask="testcafe_schlagworter__all_fields"] [data-qa="editor-save-button"] .cui-button-center');
     },
     '7.Click span "Speichern"': function() {
         act.click(".cui-button[data-qa='editor-save-button'] .cui-button-center");
@@ -71,7 +74,7 @@
     },
     '5.Click span "Dateien mit..."': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Dateien mit schlagwort)").eq(2);
+            return $(":containsExcludeChildren(Dateien mit schlagwort)").ep(2);
         };
         act.click(actionTarget);
     },
@@ -119,10 +122,10 @@
     },
     '5.Click span "Dateien mit..."': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Dateien mit schlagwort)").eq(4);
+            return $(":containsExcludeChildren(Dateien mit schlagwort)").ep(4);
         };
         act.click(actionTarget);
-    },   
+    },  
     '5.Click span "Weiter"': function() {
         act.click(".cui-button[data-qa='editor-modal-new-next-button'] .cui-button-center");
     },

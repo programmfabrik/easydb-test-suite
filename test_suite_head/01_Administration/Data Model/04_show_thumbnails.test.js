@@ -1,5 +1,5 @@
 "@fixture 04_Show thumbnails";
-"@page http://10.122.4.25/datamodel/?login=root&password=admin";
+"@page http://5.peter.pf-berlin.de/datamodel/?login=root&password=admin";
 
 "@test"["01_Viewable in Alle Felder"] = {
     "1.Wait 5000 milliseconds": function() {

@@ -1,6 +1,37 @@
 "@fixture 01_Make New Export";
 "@page http://10.122.4.25/search?login=root&password=admin";
 
+"@test"["00_quick_upload"] = {
+    "1.Wait 1 milliseconds": function() {
+        act.wait(5000);
+    },
+    "2.Click <i>": function() {
+        act.click(".cui-button[data-qa='root-menu-app-top-menu-new_objects'] .fa-plus");
+    },
+    "2.Click <i>": function() {
+        act.click(".fa.fa-plus");
+    },
+    '3.Click span "Dateien"': function() {
+        var actionTarget = function() {
+            return $('[for="cui-file-upload-button"] .fa-plus');
+        };
+        act.click(actionTarget);
+    },
+    '4.Upload "crd72-cafe-racer-crd-bmw-r100-1.jpg" file': function() {
+        act.upload("#cui-file-upload-button", "./uploads/crd72-cafe-racer-crd-bmw-r100-1.jpg");
+    },
+    '5.Click span "Weiter"': function() {
+        act.click(".cui-button[data-qa='editor-modal-new-next-button'] .cui-button-center");
+    },
+    "6.Type in input": function() {
+        act.type('[data-qa="text-column-editor-template-einzeiligertext"] input', "crd72-cafe-racer-bmw-r100");
+    },
+    '7.Click span "Speichern"': function() {
+        act.click(".cui-button[data-qa='editor-save-button'] .cui-button-center");
+    }
+};
+
+
 
 "@test"["01_simple export"] = {
     "1.Wait 5000 milliseconds": function() {
@@ -47,3 +78,5 @@
         act.click(actionTarget);
     }
 };
+
+

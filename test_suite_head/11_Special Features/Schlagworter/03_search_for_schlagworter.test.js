@@ -6,7 +6,10 @@
         act.wait(5e3);
     },
     '2.Click div "TestCafe..."': function() {
-        act.click(":containsExcludeChildren(TestCafe Schlagworter)");
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(TestCafe Schlagworter)").eq(0);
+        };
+        act.click(actionTarget);
     },
     "3.Wait 3000 milliseconds": function() {
         act.wait(3e3);
@@ -38,17 +41,27 @@
     "2.Click <i>": function() {
         act.click('[data-qa="search-expert-button"] .cui-button-left');
     },
-    "3.Type in input": function() {
+    '2.Click span "Alle Objekttypen"': function() {
+        act.click('[data-qa="search-expert-options-objecttype-select"] .cui-button-center')
+    },
+    '3.Click span "Dateien mit..."': function() {
+        act.click('[data-qa="search-expert-options-daten_mit_schlagwort-objecttype-select-option"] .cui-button-center');
+    },
+    "4.Type in input": function() {
         act.type('[ez5-field-name="daten_mit_schlagwort.schlagwort"] input', "cafe");
     },
-    '4.Click <em> "cafe"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(cafe)").eq(1);
-        };
-        act.click(actionTarget);
+    "5.Press key ENTER": function() {
+        act.press("enter");
     },
+    "6.Press key ENTER": function() {
+        act.press("enter");
+    },
+    
     '5.Click span "In die Suche..."': function() {
-        act.click('[data-qa="search-expert-options-apply-button"] span');
+        act.dblclick('[data-qa="search-expert-options-apply-button"] span');
+    },
+    '55.Click span "Search"': function() {
+        act.dblclick('[ez5-loca-key="search.button.search"] .cui-button-left');
     },
     "6.Rclick div": function() {
         var actionTarget = function() {

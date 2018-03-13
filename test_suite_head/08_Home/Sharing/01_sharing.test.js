@@ -1,7 +1,64 @@
 "@fixture 01_Sharing";
 "@page http://10.122.4.25/search/?login=root&password=admin";
 
-"@test"["01_Share from Recherche"] = {
+"@test"["00_quick_upload"] = {
+    "1.Wait 1 milliseconds": function() {
+        act.wait(5000);
+    },
+    "2.Click <i>": function() {
+        act.click(".cui-button[data-qa='root-menu-app-top-menu-new_objects'] .fa-plus");
+    },
+    "2.Click <i>": function() {
+        act.click(".fa.fa-plus");
+    },
+    '3.Click span "Dateien"': function() {
+        var actionTarget = function() {
+            return $('[for="cui-file-upload-button"] .fa-plus');
+        };
+        act.click(actionTarget);
+    },
+    '4.Upload "crd72-cafe-racer-crd-bmw-r100-1.jpg" file': function() {
+        act.upload("#cui-file-upload-button", "./uploads/BMW-K100-Cafe-Racer-7.jpg");
+    },
+    '5.Click span "Weiter"': function() {
+        act.click(".cui-button[data-qa='editor-modal-new-next-button'] .cui-button-center");
+    },
+    "6.Type in input": function() {
+        act.type('[data-qa="text-column-editor-template-einzeiligertext"] input', "bmw k100 racer 7");
+    },
+    '7.Click span "Speichern"': function() {
+        act.click(".cui-button[data-qa='editor-save-button'] .cui-button-center");
+    }
+};
+
+"@test"["01_create collection"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
+    },
+    '2.Click span "Meine Mappen"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Meine Mappen)");
+        };
+        act.rclick(actionTarget);
+    },
+     '2.Click span "Meine Mappen"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Neue Mappe unterhalb)");
+        };
+        act.click(actionTarget);
+    },
+    "3.Type in input": function() {
+        act.type('[cui-data-field-name="displayname"] [cui-data-field-name="de-DE"] input', "BMW");
+    },
+    '4.Click span "Speichern"': function() {
+        act.click(":containsExcludeChildren(Speichern)");
+    }
+};
+
+
+
+
+"@test"["02_Share from Recherche"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },
@@ -23,7 +80,7 @@
 
 
 
-"@test"["02_Share Collection with end date"] = {
+"@test"["03_Share Collection with end date"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },
@@ -52,7 +109,7 @@
         act.click(".fa.fa-calendar");
     },
     '8.Click div "20"': function() {
-        act.click(".cui-td.cui-date-time-day.cui-date-time-same-month.cui-date-time-now.cui-date-time-day-mi");
+        act.click(".cui-date-time-now");
     },
     "9.Click div": function() {
         var actionTarget = function() {
@@ -80,7 +137,7 @@
     }
 };
 
-"@test"["03_Share Click everything"] = {
+"@test"["04_Share Click everything"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },
@@ -161,7 +218,8 @@
         act.click(":containsExcludeChildren(Anwenden)");
     },
     '23.Click span "Aktivieren"': function() {
-        act.click("#button-text-2529");
+        act.click(":containsExcludeChildren(Aktivieren)");
     }
 };
+
 

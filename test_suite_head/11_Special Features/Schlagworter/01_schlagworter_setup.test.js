@@ -114,8 +114,11 @@
         };
         act.click(actionTarget);
     },
-    "15.Click div": function() {
-        act.click(".cui-layer-backdrop");
+    "11111.Click off": function() {
+        var actionTarget = function() {
+            return $('.ez5-root-layout-top .cui-horizontal-layout-center');
+        };
+        act.click(actionTarget);
     },
     "10.Click +": function() {
         act.click('[data-qa="datamodel-fields-plus-button"] .cui-button-left');

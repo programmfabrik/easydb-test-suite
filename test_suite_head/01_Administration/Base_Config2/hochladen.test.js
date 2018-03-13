@@ -1,4 +1,4 @@
-"@fixture 01_Base Config";
+"@fixture 01_Base Config (2)";
 "@page http://10.122.4.25/?login=root&password=admin";
 
 
