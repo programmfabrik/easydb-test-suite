@@ -1941,9 +1941,6 @@
         };
         act.click(actionTarget);
     },
-    "35.Click div": function() {
-        act.click(".cui-layer-backdrop");
-    },
     "11111.Click off": function() {
         var actionTarget = function() {
             return $('.ez5-root-layout-top .cui-horizontal-layout-center');
