@@ -1,5 +1,5 @@
 "@fixture 02_Add Images with Schlagworter";
-"@page http://10.122.4.25/search?login=root&password=admin";
+"@page http://10.122.4.25/metadata?login=root&password=admin";
 
 "@test"["01_Upload"] = {
     "1.Wait 1 milliseconds": function() {
@@ -74,7 +74,7 @@
     },
     '5.Click span "Dateien mit..."': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Dateien mit schlagwort)").ep(2);
+            return $(":containsExcludeChildren(Dateien mit schlagwort)");
         };
         act.click(actionTarget);
     },
@@ -89,7 +89,7 @@
     },
     '10.Click <em> "cafe"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(cafe)").eq(1);
+            return $(":containsExcludeChildren(cafe)");
         };
         act.click(actionTarget);
     },
@@ -122,7 +122,7 @@
     },
     '5.Click span "Dateien mit..."': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Dateien mit schlagwort)").ep(4);
+            return $(":containsExcludeChildren(Dateien mit schlagwort)");
         };
         act.click(actionTarget);
     },  
@@ -137,7 +137,7 @@
     },
     '10.Click <em> "cafe"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(cafe)").eq(1);
+            return $(":containsExcludeChildren(cafe)");
         };
         act.click(actionTarget);
     },
