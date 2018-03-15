@@ -98,7 +98,7 @@
     },
     '27.Click span "Speichern"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Speichern)").eq(2);
+            return $('[data-qa="system-list-manager-item-save-button"] .cui-button-center');
         };
         act.click(actionTarget);
     }
