@@ -3,6 +3,9 @@
 
 
 "@test"["Upload CSV"] = {
+    "1.Wait 4000 milliseconds": function() {
+        act.wait(8e3);
+    },
     "1.Click <i>": function() {
         act.click('[data-qa="datamodel-extra-button"] .fa-angle-down');
     },
