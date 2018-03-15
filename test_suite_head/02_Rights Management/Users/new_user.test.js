@@ -1,5 +1,5 @@
 "@fixture New User";
-"@page http://5.peter.pf-berlin.de/usermanager/?login=root&password=admin";
+"@page http://10.122.4.25/usermanager/?login=root&password=admin";
 
 
 "@test"["NewUserBasic"] = {
