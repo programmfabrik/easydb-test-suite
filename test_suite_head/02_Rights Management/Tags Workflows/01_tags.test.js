@@ -2,344 +2,177 @@
 "@page http://10.122.4.25/tagmanager/?login=root&password=admin";
 
 
-"@test"["01_Redaktions Tags"] = {
-    "1.Wait 7000 milliseconds": function() {
-        act.wait(6e3);
+
+"@test"["01_Redaktion Tags Group"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
     },
-    '2.Click span "+"': function() {
-        var actionTarget = function() {
-            return $('[ez5-loca-key="tag.form.list.plus"]').find(".fa-plus")[0];
-        };
-        act.click(actionTarget);
+    "2.Click div": function() {
+        act.click('[ez5-loca-key="tag.form.list.plus"] .fa-plus');
     },
-    '3.Click span "Alle Felder (DE)"': function() {
-        var elm = $('[ez5-loca-key="datamodel.list.button.plus"]').find(".fa-plus")
-        var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag-Gruppe"; })[0]
-        };
-        act.click(actionTarget);
+    '3.Click span "Tag-Gruppe"': function() {
+        act.click(":containsExcludeChildren(TagGruppe)");
     },
     "4.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "Redaktions Tags (DE)");
+        act.type('[row="1"] [cui-data-field-name="displayname"] input', "Redaktion Tags");
     },
-    "5.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "Redaktions Tags (US)");
+    '6.Click span "Checkbox"': function() {
+        act.click(":containsExcludeChildren(Checkbox)");
     },
-    "6.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "Redaktions Tags (ES)");
+    '7.Click span "Auswahl"': function() {
+        act.click(":containsExcludeChildren(Auswahl)");
     },
-    "7.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "Redaktions Tags (IT)");
+    "8.Click <i>": function() {
+        act.click('[row="1"] [col="4"] .cui-button-visual');
     },
-    "8.Click div": function() {
-        var actionTarget = function() {
-            return $(".cui-button-right").eq(1);
-        };
-        act.click(actionTarget);
-    },
-    '9.Click span "Alle Felder (DE)"': function() {
-        var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
-        };
-        act.click(actionTarget);
+    '9.Type in input "Kurzname"': function() {
+        act.type('[cui-data-field-name="shortname"] input', "redak");
     },
     "10.Click div": function() {
+        act.click(".cui-layer-backdrop");
+    },
+    '11.Click span "Speichern"': function() {
         var actionTarget = function() {
-            return $(".cui-button-right").eq(5);
+            return $(":containsExcludeChildren(Speichern)").eq(2);
+        };
+        act.click(actionTarget);
+    }
+};
+
+"@test"["02_Redaktion Tags"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
+    },
+    "2.Click div": function() {
+        act.click('[row="1"] [col="0"] .cui-drag-handle-row');
+    },
+    "3.Click +": function() {
+        act.click('[ez5-loca-key="tag.form.list.plus"] .fa-plus');
+    },
+    '4.Click span "Tag"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Tag)").eq(5);
         };
         act.click(actionTarget);
     },
-    '11.Click span "Alle Felder (DE)"': function() {
+    "3.Click +": function() {
+        act.click('[ez5-loca-key="tag.form.list.plus"] .fa-plus');
+    },
+    '4.Click span "Tag"': function() {
         var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
+            return $(":containsExcludeChildren(Tag)").eq(5);
         };
         act.click(actionTarget);
+    },
+    "5.Click div": function() {
+        act.click('[ez5-loca-key="tag.form.list.plus"] .fa-plus');
+    },
+    '6.Click span "Tag"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Tag)").eq(5);
+        };
+        act.click(actionTarget);
+    },
+    "7.Click div": function() {
+        act.click('[ez5-loca-key="tag.form.list.plus"] .fa-plus');
+    },
+    '8.Click span "Tag"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Tag)").eq(5);
+        };
+        act.click(actionTarget);
+    },
+    "9.Type in input": function() {
+        act.type('[row="2"] [col="1"] input', "Entwurf");
+    },
+    "10.Type in input": function() {
+        act.type('[row="3"] [col="1"] input', "Erstversion");
+    },
+    "11.Type in input": function() {
+        act.type('[row="4"] [col="1"] input', "Veroffentlichen");
+    },
+    "11.Type in input": function() {
+        act.type('[row="5"] [col="1"] input', "Redaktion");
     },
     "12.Click div": function() {
         var actionTarget = function() {
-            return $(".cui-button-right").eq(9);
+            return $(".cui-horizontal-layout-center").eq(0);
         };
         act.click(actionTarget);
     },
-    '13.Click span "Alle Felder (DE)"': function() {
+    "13.Click div": function() {
+        act.click('[row="2"] [cui-data-field-name="color"] .cui-button-visual');
+    },
+    "14.Click <i>": function() {
+        act.click(".fa.css-swatch.ez5-tag-color-green");
+    },
+    "15.Click div": function() {
+        act.click('[row="3"] [cui-data-field-name="color"] .cui-button-visual');
+    },
+    "16.Click <i>": function() {
+        act.click(".fa.css-swatch.ez5-tag-color-red");
+    },
+    "17.Click div": function() {
+        act.click('[row="4"] [cui-data-field-name="color"] .cui-button-visual');
+    },
+    "18.Click <i>": function() {
+        act.click(".fa.css-swatch.ez5-tag-color-blue");
+    },
+    "17.Click div": function() {
+        act.click('[row="5"] [cui-data-field-name="color"] .cui-button-visual');
+    },
+    "18.Click <i>": function() {
+        act.click(".fa.css-swatch.ez5-tag-color-orange");
+    },
+    '11.Click span "Speichern"': function() {
         var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
+            return $(":containsExcludeChildren(Speichern)").eq(2);
         };
         act.click(actionTarget);
-    },
-    "14.Click div": function() {
-        var actionTarget = function() {
-            return $(".cui-button-right").eq(13);
-        };
-        act.click(actionTarget);
-    },
-    '15.Click span "Alle Felder (DE)"': function() {
-        var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
-        };
-        act.click(actionTarget);
-    },
-    "16.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "Entwurf (DE)");
-    },
-    "17.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "Entwurf (US)");
-    },
-    "18.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "Entwurf (ES)");
-    },
-    "19.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "Entwurf (IT)");
-    },
-    "20.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "Erstversion (DE)");
-    },
-    "21.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "Erstversion (US)");
-    },
-    "22.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "Erstversion (ES)");
-    },
-    "23.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "Erstversion (IT)");
-    },
-    "24.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "Redaktion (DE)");
-    },
-    "25.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "Redaktion (US)");
-    },
-    "26.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "Redaktion (ES)");
-    },
-    "27.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "Redaktion (IT)");
-    },
-    "28.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "Veröffentlichen (DE)");
-    },
-    "29.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "Veröffentlichen (US)");
-    },
-    "30.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "Veröffentlichen (ES)");
-    },
-    "31.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "Veröffentlichen (IT)");
-    },
-    "32.Click span": function() {
-        var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(0);
-        };
-        act.click(actionTarget);
-    },
-    "33.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(9) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2)");
-    },
-    "34.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(6) > div:nth(0) > div:nth(0)");
-    },
-    "35.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(9) > div:nth(0) > div:nth(0) > div:nth(0)");
-    },
-    "36.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(0)");
-    },
-    "37.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(9) > div:nth(0) > div:nth(0) > div:nth(0)");
-    },
-    "38.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(4) > div:nth(0)");
-    },
-    "39.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(9) > div:nth(0) > div:nth(0) > div:nth(0)");
-    },
-    "40.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0)");
-    },
-    '41.Click span "Checkbox"': function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > span:nth(0)");
-    },
-    '42.Click span "Auswahl"': function() {
-        var actionTarget = function() {
-            return $('.cui-button-center span').filter(function(index, span) { return span.textContent === "Auswahl"; })[0]
-        };
-        act.click(actionTarget);
-    },
-    "43.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1)");
-    },
-    "44.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(15) > div:nth(0)");
-    },
-    "45.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1)");
-    },
-    "46.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(9) > div:nth(0)");
-    },
-    "47.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2)");
-    },
-    "48.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(14) > div:nth(0)");
-    },
-    "49.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0)");
-    },
-    "50.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(10) > div:nth(0)");
-    },
-    '51.Click span "Speichern"': function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > span:nth(0)");
-    },
-    "52.Assert": function() {
-        eq($("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)").val(), "Redaktions Tags (DE)");
     }
 };
 
 
 
-"@test"["02_Sonderzeichen Tags"] = {
-    "1.Wait 7000 milliseconds": function() {
-        act.wait(6e3);
+
+"@test"["03_Sonderzeichen Tags Group"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
     },
-    '2.Click span "+"': function() {
+    "2.Click div": function() {
+        act.click('[ez5-loca-key="tag.form.list.plus"] .fa-plus');
+    },
+    '3.Click span "Tag-Gruppe"': function() {
+        act.click(":containsExcludeChildren(TagGruppe)");
+    },
+    "4.Type in input": function() {
+        act.type('[row="2"] [cui-data-field-name="displayname"] input', "Sonderzeichen Tags");
+    },
+    '6.Click span "Checkbox"': function() {
         var actionTarget = function() {
-            return $('[ez5-loca-key="tag.form.list.plus"]').find(".fa-plus")[0];
+            return $(":containsExcludeChildren(Checkbox)").eq(0);
         };
         act.click(actionTarget);
     },
-    '3.Click span "Alle Felder (DE)"': function() {
+    '7.Click span "Auswahl"': function() {
         var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag-Gruppe"; })[0]
+            return $(":containsExcludeChildren(Auswahl)").eq(1);
         };
         act.click(actionTarget);
     },
-    "4.Click div": function() {
+    "8.Click <i>": function() {
+        act.click('[row="2"] [col="4"] .cui-button-visual');
+    },
+    '9.Type in input "Kurzname"': function() {
+        act.type('[cui-data-field-name="shortname"] input', "sonder");
+    },
+    "10.Click div": function() {
+        act.click(".cui-layer-backdrop");
+    },
+    '11.Click span "Speichern"': function() {
         var actionTarget = function() {
-            return $('[ez5-loca-key="tag.form.list.plus"]').find(".fa-plus")[0];
+            return $(":containsExcludeChildren(Speichern)").eq(2);
         };
         act.click(actionTarget);
-    },
-    '5.Click span "Tag"': function() {
-        var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
-        };
-        act.click(actionTarget);
-    },
-    "6.Click div": function() {
-        var actionTarget = function() {
-            return $('[ez5-loca-key="tag.form.list.plus"]').find(".fa-plus")[0];
-        };
-        act.click(actionTarget);
-    },
-    "7.Click div": function() {
-        var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
-        };
-        act.click(actionTarget);
-    },
-    "8.Click div": function() {
-        var actionTarget = function() {
-            return $('[ez5-loca-key="tag.form.list.plus"]').find(".fa-plus")[0];
-        };
-        act.click(actionTarget);
-    },
-    '9.Click span "Tag"': function() {
-        var actionTarget = function() {
-            return $('.cui-item-list-body span').filter(function(index, span) { return span.textContent === "Tag"; })[0]
-        };
-        act.click(actionTarget);
-    },
-    "10.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", 'Sonderzeichen Tags - ÄÖÜ!"§$%&/()=? (DE)');
-    },
-    "11.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", 'Sonderzeichen Tags - ÄÖÜ!"§$%&/()=? (US)');
-    },
-    "12.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", 'Sonderzeichen Tags - ÄÖÜ!"§$%&/()=? (ES)');
-    },
-    "13.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", 'Sonderzeichen Tags - ÄÖÜ!"§$%&/()=? (IT)');
-    },
-    "14.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "*__* - `__´ - $_§ - @_@ (DE)");
-    },
-    "15.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "*__* - `__´ - $_§ - @_@ (US)");
-    },
-    "16.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "*__* - `__´ - $_§ - @_@ (ES)");
-    },
-    "17.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "*__* - `__´ - $_§ - @_@ (IT)");
-    },
-    "18.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "☀ ☯ ☢ (DE)");
-    },
-    "19.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "☀ ☯ ☢ (US)");
-    },
-    "20.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "☀ ☯ ☢ (ES)");
-    },
-    "21.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "☀ ☯ ☢ (IT)");
-    },
-    "22.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)", "धबब (DE)");
-    },
-    "23.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > input:nth(0)", "धबब (US)");
-    },
-    "24.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > input:nth(0)", "धबब (ES)");
-    },
-    "25.Type in input": function() {
-        act.type("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > input:nth(0)", "धबब (IT)");
-    },
-    "26.Click span": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > span:nth(0)");
-    },
-    "27.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0)");
-    },
-    "28.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1)");
-    },
-    "29.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0)");
-    },
-    "30.Click div": function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(4) > div:nth(0) > div:nth(8) > div:nth(0) > div:nth(0) > div:nth(0)");
-    },
-    "31.Click div": function() {
-        act.click("body > div:nth(5) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(3) > div:nth(0) > div:nth(0)");
-    },
-    "32.Click span": function() {
-        var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(0);
-        };
-        act.click(actionTarget);
-    },
-    "33.Click span": function() {
-        var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(1);
-        };
-        act.click(actionTarget);
-    },
-    "34.Click span": function() {
-        var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(2);
-        };
-        act.click(actionTarget);
-    },
-    '35.Click span "Speichern"': function() {
-        act.click("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > span:nth(0)");
-    },
-    "36.Assert": function() {
-        eq($("body > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > input:nth(0)").val(), 'Sonderzeichen Tags - ÄÖÜ!"§$%&/()=? (DE)');
     }
 };

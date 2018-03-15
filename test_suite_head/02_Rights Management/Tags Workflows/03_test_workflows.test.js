@@ -14,26 +14,27 @@
     '4.Upload "24_03_2015_BMW_R80_caferacer_IWC_motorcycles_05.jpg" file': function() {
         act.upload("#cui-file-upload-button", "./uploads/24_03_2015_BMW_R80_caferacer_IWC_motorcycles_05.jpg");
     },
-    "5.Click pbjecttyp": function() {
-        act.click('[data-qa="editor-modal-new-objecttype-select"] .cui-button-center');
-    },
-    '6.Click span "Dateien (DE)"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(Dateien DE)").eq(2);
-        };
-        act.click(actionTarget);
-    },
+    
     '7.Click span "Weiter"': function() {
         act.click('[data-qa="editor-modal-new-next-button"] .cui-button-center');
     },
     "8.Type in input": function() {
-        act.type("[data-qa='text-column-editor-template-beschreibung'] input", "workflow test");
+        act.type("[data-qa='text-column-editor-template-einzeiligertext'] input", "workflow test");
     },
     "9.Click div": function() {
         var actionTarget = function() {
-            return $(".cui-horizontal-layout.ez5-editor-pane.cui-maximize.cui-maximize-horizontal.cui-maximize-vertical").find(" > div:nth(1)");
+            return $('[title="tags.field.button.open_popover"] .cui-button-center');
         };
         act.click(actionTarget);
+    },
+    '6.Click span "Erstversion"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Erstversion)").eq(2);
+        };
+        act.click(actionTarget);
+    },
+    '10.Click span "Speichern"': function() {
+        act.click('[data-qa="editor-save-button"] .cui-button-center');
     },
     '10.Click span "Speichern"': function() {
         act.click('[data-qa="editor-save-button"] .cui-button-center');
@@ -66,3 +67,4 @@
         act.click(":containsExcludeChildren(Ok)");
     }
 };
+
