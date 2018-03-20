@@ -167,15 +167,6 @@
             return $('.cui-button-center span').filter(function(index, span) { return span.textContent === "Änderungen aktivieren"; })[0];
         };
         act.click(actionTarget);
-    },
-    '4.Click span "Übernehmen"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(Übernehmen)").eq(1);
-        };
-        act.click(actionTarget);
-    },
-    '5.Click span "Neu Laden"': function() {
-        act.click(":containsExcludeChildren(Neu Laden)");
     }
 };
 

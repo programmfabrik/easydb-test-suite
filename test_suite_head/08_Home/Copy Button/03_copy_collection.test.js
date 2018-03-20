@@ -9,7 +9,7 @@
     },
     '2.Rclick div "BMW"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(BMW)").eq(0);
+            return $(":containsExcludeChildren(Copiable)");
         };
         act.rclick(actionTarget);
     },

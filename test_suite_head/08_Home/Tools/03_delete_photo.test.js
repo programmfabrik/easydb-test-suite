@@ -1,9 +1,9 @@
-"@fixture 03_Delete Photo";
+"@fixture 03_ToolBoxtools_Delete_Photo";
 "@page http://10.122.4.25/search/?login=root&password=admin";
 
 
 
-"@test"["delete photo"] = {
+"@test"["03_ToolBoxtools_Delete_Photo"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },

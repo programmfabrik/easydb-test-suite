@@ -64,6 +64,11 @@
         act.click(":containsExcludeChildren(Alle Felder DE)", {
             ctrl: true
         });
+    },
+     '3.Click span "Übernehmen"': function() {
+        act.click(":containsExcludeChildren(Übernehmen)");
     }
 };
+
+
 

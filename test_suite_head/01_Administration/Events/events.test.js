@@ -45,12 +45,6 @@
         };
         act.click(actionTarget);
     },
-    "6.Click <i>": function() {
-        act.click('[ez5-loca-key="result.navigation.toolbar.right"] .fa-angle-right');
-    },
-    "7.Click <i>": function() {
-        act.click('[ez5-loca-key="result.navigation.toolbar.first"] .fa-step-backward');
-    },
     '8.Click span "Herunterladen als..."': function() {
         act.click(":containsExcludeChildren(Herunterladen als CSV)");
     }

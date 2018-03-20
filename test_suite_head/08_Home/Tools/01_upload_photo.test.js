@@ -1,9 +1,9 @@
-"@fixture 01_Upload Photo";
+"@fixture 01_Toolboxtools_Upload_Photo";
 "@page http://10.122.4.25/search/?login=root&password=admin";
 
 
 
-"@test"["01_upload"] = {
+"@test"["01_Toolboxtools_Upload_Photo"] = {
     "1.Wait 1 milliseconds": function() {
         act.wait(5000);
     },
@@ -11,7 +11,10 @@
         act.click(".cui-button[data-qa='root-menu-app-top-menu-new_objects'] .fa-plus");
     },
     '3.Click span "Dateien"': function() {
-        act.click("body > div:nth(5) > div:nth(1) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > label:nth(0) > div:nth(0) > div:nth(1) > span:nth(0)");
+        var actionTarget = function() {
+            return $('[for="cui-file-upload-button"] .cui-button-center');
+        };
+        act.click(actionTarget);
     },
     '4.Upload "pb2-2.jpg" file': function() {
         act.upload("#cui-file-upload-button", "./uploads/15_BMW-R80-Scrambler.jpg");

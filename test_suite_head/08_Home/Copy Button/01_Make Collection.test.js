@@ -1,39 +1,28 @@
 "@fixture 01_Make Collection";
 "@page http://10.122.4.25/search/?login=root&password=admin";
 
-"@test"["Create collection"] = {
+"@test"["01_create_collection_to_copy"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },
-    "2.Click <i>": function() {
-        act.click('[ez5-loca-key="collection.manager.button.add"] .cui-button-left');
-    },
-    '3.Click span "Meine Mappen"': function() {
+    '2.Click span "Meine Mappen"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Meine Mappen)").eq(1);
+            return $(":containsExcludeChildren(Meine Mappen)");
+        };
+        act.rclick(actionTarget);
+    },
+     '2.Click span "Meine Mappen"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Neue Mappe unterhalb)");
         };
         act.click(actionTarget);
     },
-    "4.Type in input": function() {
-        act.type(".cui-form-field-name--input input", "BMW");
+    "3.Type in input": function() {
+        act.type('[cui-data-field-name="displayname"] [cui-data-field-name="de-DE"] input', "Copiable");
     },
-    '5.Click span "Speichern"': function() {
+    '4.Click span "Speichern"': function() {
         act.click(":containsExcludeChildren(Speichern)");
-    },
-    "6.Drag div": function() {
-        var actionTarget = function() {
-            return $(".ez5-info").eq(0);
-        };
-        act.drag(actionTarget, -231, 31, {
-            offsetX: 99,
-            offsetY: 70
-        });
-    },
-    '7.Click span "1"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(1)").eq(1);
-        };
-        act.click(actionTarget);
     }
 };
+
 
