@@ -17,7 +17,7 @@
         act.click(actionTarget);
     },
     '4.Click span "Übernehmen"': function() {
-        act.click(":containsExcludeChildren(Übernehmen)");
+        act.click(":containsExcludeChildren(Anwenden)");
     }
 };
 
@@ -46,7 +46,7 @@
         act.click(":containsExcludeChildren(Absteigend)");
     },
     '8.Click span "Übernehmen"': function() {
-        act.click(":containsExcludeChildren(Übernehmen)");
+        act.click(":containsExcludeChildren(Anwenden)");
     }
 };
 
@@ -70,7 +70,7 @@
         act.click(actionTarget);
     },
     '5.Click span "Übernehmen"': function() {
-        act.click(":containsExcludeChildren(Übernehmen)");
+        act.click(":containsExcludeChildren(Anwenden)");
     }
 };
 

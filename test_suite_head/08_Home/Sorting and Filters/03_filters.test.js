@@ -10,7 +10,7 @@
     },
     '3.Click span "Dateien (DE)"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Dateien DE)").eq(0);
+            return $(":containsExcludeChildren(Alle Felder DE)").eq(0);
         };
         act.click(actionTarget);
     },
@@ -22,7 +22,7 @@
     }
 };
 
-"@test"["Filter Pictures Current Month"] = {
+"@test"["Filter Pictures Filetype"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },
@@ -36,24 +36,11 @@
         act.click(":containsExcludeChildren(Bilder)");
     },
     '4.Click span "Aktueller Monat"': function() {
-        act.click(":containsExcludeChildren(Aktueller Monat)");
+        act.click(":containsExcludeChildren(JPG)");
     }
 };
 
-"@test"["Filter Dynamic Field from Objekttype"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
-    },
-    '2.Click span "Filter"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(Filter)").eq(0);
-        };
-        act.click(actionTarget);
-    },
-    '3.Click span "Aktueller Monat"': function() {
-        act.click(":containsExcludeChildren(Aktueller Monat)");
-    }
-};
+
 
 "@test"["Filter Upload (Critical Test)"] = {
     "1.Wait 5000 milliseconds": function() {
