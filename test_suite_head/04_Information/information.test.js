@@ -4,14 +4,14 @@
 
 "@test"["Information"] = {
     "1.Wait 5 milliseconds": function() {
-        act.wait(5);
+        act.wait(5000);
     },
     "2.Click <i>": function() {
-        act.click('[title="root.menu.submenu.zzz_info"] .cui-button-left');
+        act.click('[ez5-loca-key="root.menu.burger"] .fa-bars');
     },
     '3.Click span "Über..."': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Über)").eq(1);
+            return $('[data-qa="root-menu-app-root-menu-about-label"] .cui-button-center');
         };
         act.click(actionTarget);
     },

@@ -56,7 +56,41 @@
     }
 };
 
-"@test"["04_Delete All Events"] = {
+
+"@test"["03_Search_event_ID"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
+    },
+    '1.Type in input "ID"': function() {
+        act.type('[cui-data-field-name="id"] input', "200");
+    },
+    '2.Click span "Aktualisieren"': function() {
+        act.click(":containsExcludeChildren(Aktualisieren)");
+    },
+    '3.Click span "200"': function() {
+        act.click(":containsExcludeChildren(200)");
+    }
+};
+
+"@test"["04_Delete Single Event"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
+    },
+    "2.Click div": function() {
+        var actionTarget = function() {
+            return $(".cui-tree-node-content").eq(0);
+        };
+        act.click(actionTarget);
+    },
+    "3.Click <i>": function() {
+        act.click('[ez5-loca-key="system.list.manager.button.minus"] .fa-minus');
+    },
+    '4.Click span "Aktualisieren"': function() {
+        act.click(":containsExcludeChildren(Aktualisieren)");
+    }
+};
+
+"@test"["05_Delete All Events"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },
@@ -77,20 +111,3 @@
     }
 };
 
-"@test"["03_Delete Single Event"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
-    },
-    "2.Click div": function() {
-        var actionTarget = function() {
-            return $(".cui-tree-node-content").eq(0);
-        };
-        act.click(actionTarget);
-    },
-    "3.Click <i>": function() {
-        act.click('[ez5-loca-key="system.list.manager.button.minus"] .fa-minus');
-    },
-    '4.Click span "Aktualisieren"': function() {
-        act.click(":containsExcludeChildren(Aktualisieren)");
-    }
-};

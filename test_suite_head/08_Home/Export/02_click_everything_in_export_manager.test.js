@@ -121,9 +121,21 @@
         };
         act.click(actionTarget);
     },
+    '4.Click span "Eigene Felder Auswahlen"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="export-manager-form-select-fields-checkbox"] span');
+        };
+        act.click(actionTarget);
+    },
+    '4.Click span "Eigene Felder Auswahlen"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Eigene Felder auswählen)");
+        };
+        act.click(actionTarget);
+    },
     '7.Click span "Felder auswählen"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Felder auswählen)").eq(1);
+            return $('[data-qa="export-manager-form-select-fields-button"] .cui-button-center');
         };
         act.click(actionTarget);
     },

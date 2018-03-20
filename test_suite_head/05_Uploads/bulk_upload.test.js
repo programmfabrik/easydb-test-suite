@@ -1,5 +1,5 @@
 "@fixture Bulk Upload";
-"@page http://10.122.4.25/search/?login=root&password=admin";
+"@page http://10.122.4.25/eventmanager/?login=root&password=admin";
 
 "@test"["Bulk Upload"] = {
     "1.Wait 5000 milliseconds": function() {
@@ -33,7 +33,10 @@
         act.click('[data-qa="editor-modal-new-objecttype-select"] .cui-button-center');
     },
     '6.Click span "Dateien (DE)"': function() {
-        act.click("body > div:nth(6) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(1) > div:nth(0) > div:nth(0) > span:nth(0)")
+         var actionTarget = function() {
+            return $(":containsExcludeChildren(Dateien DE)");
+        };
+        act.click(actionTarget);
     },
     "7.Wait 7000 milliseconds": function() {
         act.wait(5e3);

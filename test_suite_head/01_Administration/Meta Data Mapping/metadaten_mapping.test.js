@@ -45,15 +45,7 @@
     '10.Click span "Rechte"': function() {
         act.click('[tab="rights"] .cui-button-center');
     },
-    '11.Drag span "Beschreibung (DE)"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(Beschreibung DE)").eq(1);
-        };
-        act.drag(actionTarget, 262, -113, {
-            offsetX: 36,
-            offsetY: 9
-        });
-    },
+    
     '12.Click span "GPS"': function() {
         act.click('[tab="gps"] .cui-button-center');
     },

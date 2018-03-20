@@ -52,3 +52,18 @@
         act.click('.cui-list-view-grid-quadrant [row="1"] [ez5-loca-key="search.type.selector.node.button.info"] .fa-info-circle');
     }
 };
+
+"@test"["06_Reset Search Filters"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
+    },
+    '2.Click span "Objekttypen/Pools"': function() {
+        act.click('[data-qa="search-type-selector-button"] .cui-button-center');
+    },
+    '2.Click span "Alle Felder (DE)"': function() {
+        act.click(":containsExcludeChildren(Alle Felder DE)", {
+            ctrl: true
+        });
+    }
+};
+
