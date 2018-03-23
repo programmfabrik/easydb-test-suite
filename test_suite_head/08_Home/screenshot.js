@@ -5,5 +5,6 @@ fixture `My fixture`
 
 test('Take a screenshot of a fieldset', async t => {
     await t
+    	.wait(5000)
         .takeScreenshot('screenshots/screen1.jpg');
 });
