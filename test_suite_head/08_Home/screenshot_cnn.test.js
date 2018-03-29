@@ -7,5 +7,14 @@
     },
     "1.Take a screenshot": function() {
         act.screenshot('screenshots/1.png');
+    },
+    "1.Take a screenshot": function() {
+        act.screenshot('screenshots/1.png');
+    },
+    "1.Take a screenshot": function() {
+        act.screenshot('screenshots/1.png');
+    },
+    "1.Take a screenshot": function() {
+        act.screenshot('screenshots/1.png');
     }
 };
