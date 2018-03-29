@@ -12,6 +12,5 @@ createTestCafe('localhost', 1337, 1338)
 	console.log(err);
 });
 
-	node_modules/.bin/testcafe firefox test_suite_head/08_Home/screenshot_cnn.test.js -r xunit:res.xml -s screenshots/
-
-node test_suite_head/08_Home/run_tests.js 
+//node_modules/.bin/testcafe firefox test_suite_head/08_Home/screenshot_cnn.test.js -r xunit:res.xml -s screenshots/
+//node test_suite_head/08_Home/run_tests.js 
