@@ -9,10 +9,10 @@
         act.screenshot();
     },
     "1.Take a screenshot1": function() {
-        act.screenshot('screenshots/1.png');
+        act.screenshot();
     },
     "1.Take a screenshot2": function() {
-        act.screenshot('sd/12.png');
+        act.screenshot();
     },
     "1.Take a screenshot3": function() {
         act.screenshot();
