@@ -6,7 +6,7 @@ createTestCafe('localhost', 1337, 1338)
 		return runner
 		.src(['test_suite_head/08_Home/screenshot_cnn.test.js'])
 		.browsers(['firefox'])
-		.screenshots('screenshots/', true)
+		.screenshots('screenshots/', takeOnFails = false)
 		.run();
 	}).catch(err => {
 	console.log(err);
