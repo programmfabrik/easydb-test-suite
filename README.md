@@ -18,7 +18,7 @@ To integrate each project into a new machine, simply follow the steps outlined b
  - [3. Testcafe Run on Chrome](#3-testcafe-run-on-google-chrome)
  - [4. Testcafe Run on Firefox](#4-testcafe-run-on-mozilla-firefox)
  - [5. Testcafe Run on Internet Explorer](#5-testcafe-run-on-internet-explorer)
- - [Running Concurrently](#running-concurrently-optional)
+ - [Running Sequentially](#running-sequentially-optional)
  - [dropdb.sh script in VM](#dropdb-sh-script-in-root-home-of-vm)
 
 
@@ -26,15 +26,19 @@ To integrate each project into a new machine, simply follow the steps outlined b
 
 ---
 
-Requirements/steps necessary to run the TestCafe CI project on a new host machine:
+Requirements/steps necessary to run the TestCafe CI project on a new host machine (Guide is intended for a Windows PC), steps 8 and 9 are very critical:
+Also its helpful for the Virtual Machine to have a static IP address, at the moment the ip is set to: `10.122.4.25`.
 
 1. Establish a user with Administration Rights, and follow all steps as this user.
-2. Download of [Cygwin terminal](https://cygwin.com/install.html) with SSH package, preferrably in defualt location "c:/cygwin64".
-3. Download and install [Jenkins](https://jenkins.io/download/).
-3. The easydb5-testing-vm Virtual Machine must be running, somewhere on the local network.
-4. Copy the SSH key of the admin user to the VM to prevent sign on during run time: Open cygwin terminal, run `ssh-copy-id root@10.122.4.25`
-5. Run Jenkins Manually, stop the jenkins service in services.msc, then restart Jenkins with command `java -jar jenkins.war` in directory "C:\Programm Files (x86)\Jenkins" , this allows Jenkins to have access to local files and directories (cygwin, chrome, firefox, etc) and is a *critical* step to the functionality of this project.
-6. (Optional) Download Multipjob Project plugin for jenkins if you want all projects to run concurrently. See [Running Concurrently](#running-concurrently) for more details.
+2. Make sure [Java](https://www.java.com/en/download/manual.jsp) is installed on the new host machine and added to the Environment Path variable.
+3. Make sure [Git (for Windows)](http://git-scm.com/download/win ) is installed on the new host machine and added to the Environment Path variable.
+4. Make sure [Node.js and NPM](https://nodejs.org/en/) are installed on the new host machine and added to the Environment Path variable.
+5. Download of [Cygwin terminal](https://cygwin.com/install.html) with SSH package, preferrably in defualt location "c:/cygwin64".
+6. Download and install [Jenkins](https://jenkins.io/download/).
+7. The easydb5-testing-vm Virtual Machine must be running, somewhere on the local network.
+8. Prevent SSH sign on during run time: create an SSH key for the admin user of the host machine and copy the SSH key to the VM: Open cygwin terminal, run `ssh-keygen`, then `ssh-copy-id root@<ip_of_vm>`.
+9. Run Jenkins Manually: stop the Jenkins service in `services.msc`, then restart Jenkins with command `java -jar jenkins.war` in directory "C:\Programm Files (x86)\Jenkins" , this allows Jenkins to have access to local files and directories (cygwin, chrome, firefox, etc) and is a *critical* step to the functionality of this project.
+10. (Optional) Download Multipjob Project plugin for jenkins if you want all projects to run sequentially. See [Running Sequentially](#running-sequentially) for more details.
 
 
 ### Installation/Steps
@@ -65,7 +69,8 @@ Open a new freestyle project from Jenkins homepage and copy contents into respec
 |Source Code Management|||
 |Build Triggers|||
 |Build Environment|||
-|Build|Execute Windows Batch Command | `C:\cygwin64\bin\ssh root@10.122.4.25 '../home/easydb/easydb/5/easydb-server/build/automation/automate.sh git easydb /home/easydb/easydb/5'`	`C:\cygwin64\bin\ssh root@10.122.4.25 '../home/easydb/easydb/5/easydb-server/build/automation/automate.sh make easydb /home/easydb/easydb/5'`|
+|Build|Execute Windows Batch Command | `C:\cygwin64\bin\ssh root@10.122.4.25 '../home/easydb/easydb/5/easydb-server/build/automation/automate.sh git easydb /home/easydb/easydb/5'`	|
+||Execute Windows Batch Command|`C:\cygwin64\bin\ssh root@10.122.4.25 '../home/easydb/easydb/5/easydb-server/build/automation/automate.sh make easydb /home/easydb/easydb/5'`|
 |Post Build| | .|
 
 
@@ -104,7 +109,8 @@ Open a new freestyle project from Jenkins homepage and copy contents into respec
 |Source Code Management| git | `https://github.com/programmfabrik/easydb_test_suite`|
 |Build Triggers|||
 |Build Environment|||
-|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	`node_modules/.bin/testcafe chrome test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
+|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	|
+||Execute Windows Batch Command|`node_modules/.bin/testcafe chrome test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
 |Post Build|Publish JUnit test result report| `res.xml`|
 
 ### 4. Testcafe Run on Mozilla Firefox
@@ -121,7 +127,8 @@ Open a new freestyle project from Jenkins homepage and copy contents into respec
 |Source Code Management| git | `https://github.com/programmfabrik/easydb_test_suite`|
 |Build Triggers|||
 |Build Environment|||
-|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	`node_modules/.bin/testcafe firefox test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
+|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	|
+||Execute Windows Batch Command|`node_modules/.bin/testcafe firefox test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
 |Post Build|Publish JUnit test result report| `res.xml`|
 
 ### 5. Testcafe Run on Internet Explorer
@@ -138,11 +145,12 @@ Open a new freestyle project from Jenkins homepage and copy contents into respec
 |Source Code Management| git | `https://github.com/programmfabrik/easydb_test_suite`|
 |Build Triggers|||
 |Build Environment|||
-|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	`node_modules/.bin/testcafe ie test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
+|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`|
+||Execute Windows Batch Command|`node_modules/.bin/testcafe ie test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
 |Post Build|Publish JUnit test result report| `res.xml`|
 
 
-### Running Concurrently (Optional)
+### Running Sequentially (Optional)
 
 ---
 
