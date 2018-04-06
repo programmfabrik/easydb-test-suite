@@ -2,7 +2,7 @@
 
 The test reports and screenshots can be found here:
 
-\\samba\programmfabrik\Qualitaetssicherung\Tests\TestCafe
+`\\samba\programmfabrik\Qualitaetssicherung\Tests\TestCafe`
 
 This repo hosts the TestCafe tests for the easydb application. The intent is for convenient access of the Jenkins Project to pull the latest changes of every run.
 
