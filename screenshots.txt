@@ -1,1 +1,0 @@
-},"1.Take a screenshot": function() {act.screenshot();},
