@@ -1,8 +1,6 @@
 # easydb-test-suite
 
-The test reports and screenshots can be found here:
 
-`\\samba\programmfabrik\Qualitaetssicherung\Tests\TestCafe`
 
 This repo hosts the TestCafe tests for the easydb application. The intent is for convenient access of the Jenkins Project to pull the latest changes of every run.
 
@@ -17,11 +15,10 @@ To integrate each project into a new machine, simply follow the steps outlined b
  - [Installation/Steps](#installation-steps)
  - [1. Easydb Update Instance](#1-easydb-update-instance)
  - [2. Drop Database for Jenkins](#2-drop-db-for-jenkins)
- - [3. Testcafe Run on Chrome](#3-testcafe-run-on-google-chrome)
- - [4. Testcafe Run on Firefox](#4-testcafe-run-on-mozilla-firefox)
- - [5. Testcafe Run on Internet Explorer](#5-testcafe-run-on-internet-explorer)
+ - [3. Testcafe Run on Browser](#3-testcafe-run-on-browser)
  - [Running Sequentially](#running-sequentially-optional)
  - [dropdb.sh script in VM](#dropdb-sh-script-in-root-home-of-vm)
+ - [Email Tempalte](#email-template)
 
 
 ### Prerequisites
@@ -40,6 +37,7 @@ Also its helpful for the Virtual Machine to have a static IP address, at the mom
 7. The easydb5-testing-vm Virtual Machine must be running, somewhere on the local network.
 8. Prevent SSH sign on during run time: create an SSH key for the admin user of the host machine and copy the SSH key to the VM: Open cygwin terminal, run `ssh-keygen`, then `ssh-copy-id root@<ip_of_vm>`.
 9. Run Jenkins Manually: stop the Jenkins service in `services.msc`, then restart Jenkins with command `java -jar jenkins.war` in directory "C:\Programm Files (x86)\Jenkins" , this allows Jenkins to have access to local files and directories (cygwin, chrome, firefox, etc) and is a *critical* step to the functionality of this project.
+11. Download Email-ext plugin for jenkins. In Manage Jenkins -> Configure System, under SMTP server, type `mail.programmfabrik.de`, under default recipients, type email to recieve test results, follow step [Email Template](#email-template) for further details. 
 10. (Optional) Download Multipjob Project plugin for jenkins if you want all projects to run sequentially. See [Running Sequentially](#running-sequentially) for more details.
 
 
@@ -47,7 +45,7 @@ Also its helpful for the Virtual Machine to have a static IP address, at the mom
 
 ---
 
-Now we will establish the Jenkins projects which will automate the testing for us. We will create exactly 5 projects, which will be responsible for updating our easydb instance, reseting clearing the schema and dropping the database and restarting the server, and runnning on 3 different browser (Chrome, IE, and Firefox). To establish these projects, follow these steps.
+Now we will establish the Jenkins projects which will automate the testing for us. We will create exactly 5 projects, which will be responsible for updating our easydb instance, reseting clearing the schema and dropping the database and restarting the server, and runnning on 4 different browser (Chrome, IE, Edge, and Firefox). To establish these projects, follow these steps.
 
 
 1. Go to Jenkins at [http://localhost:8080](http://localhost:8080)
@@ -97,59 +95,28 @@ Open a new freestyle project from Jenkins homepage and copy contents into respec
 
 
 
-### 3. Testcafe Run on Google Chrome
+### 3. Testcafe Run on Browser
 
 ---
 
 Open a new freestyle project from Jenkins homepage and copy contents into respective fields.
+
+The <BROWSER> input should be either `chrome`,`firefox`,`edge`, or `ie`.
 
 |Section | Option | Content |
 |--|--|--|
 |Project Name| |  testcafe_runner_chrome |
-|Description|  |This project is designed to run the testcafe tests on the Google Chrome browser, the results will be published to an XML file and is viewable in the project workspace, screenshots are taken between every step. The test report will specify in which directory you can find the photos regarding any failed tests. |
+|Description|  |This project is designed to run the testcafe tests in a specified web browser, the results will be published to an XML file and is viewable in the project workspace, screenshots are taken between every step. The test report will specify in which directory you can find the photos regarding any failed tests. |
 |Options|||
 |Source Code Management| git | `https://github.com/programmfabrik/easydb_test_suite`|
 |Build Triggers|||
 |Build Environment|||
 |Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	|
-||Execute Windows Batch Command|`node_modules/.bin/testcafe chrome test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
-|Post Build|Publish JUnit test result report| `res.xml`|
+||Execute Windows Batch Command|`node_modules/.bin/testcafe <BROWSER> test_suite_head_screenshots/**/* --screenshots ../results_screenshots -r xunit:results_<BROWSER>.xml`|
+|Post Build|Publish JUnit test result report| `results_<BROWSER>.xml`|
+||Editable Email Notification| Default Content |
 
-### 4. Testcafe Run on Mozilla Firefox
 
----
-
-Open a new freestyle project from Jenkins homepage and copy contents into respective fields.
-
-|Section | Option | Content |
-|--|--|--|
-|Project Name| | testcafe_runner_firefox |
-|Description|  |This project is designed to run the testcafe tests on the Mozilla Firefox browser, the results will be published to an XML file and is viewable in the project workspace, screenshots are taken between every step. The test report will specify in which directory you can find the photos regarding any failed tests.|
-|Options|||
-|Source Code Management| git | `https://github.com/programmfabrik/easydb_test_suite`|
-|Build Triggers|||
-|Build Environment|||
-|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	|
-||Execute Windows Batch Command|`node_modules/.bin/testcafe firefox test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
-|Post Build|Publish JUnit test result report| `res.xml`|
-
-### 5. Testcafe Run on Internet Explorer
-
----
-
-Open a new freestyle project from Jenkins homepage and copy contents into respective fields.
-
-|Section | Option | Content |
-|--|--|--|
-|Project Name| | testcafe_runner_ie |
-|Description|  |This project is designed to run the testcafe tests on the Internet Explorer browser, the results will be published to an XML file and is viewable in the project workspace, screenshots are taken between every step. The test report will specify in which directory you can find the photos regarding any failed tests.|
-|Options|||
-|Source Code Management| git | `https://github.com/programmfabrik/easydb_test_suite`|
-|Build Triggers|||
-|Build Environment|||
-|Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`|
-||Execute Windows Batch Command|`node_modules/.bin/testcafe ie test_suite_head_screenshots/**/* --screenshots screenshots -r xunit:res.xml`|
-|Post Build|Publish JUnit test result report| `res.xml`|
 
 
 ### Running Sequentially (Optional)
@@ -194,3 +161,10 @@ dr="../home/easydb/easydb/5/easydb-server/src/imexporter/"
 ```
 
 
+### Email Template
+
+Copy the email template, saved as `groovy.template`, into the `$JENKINS_HOME/email-templates` directory. Considering you followed step 9 of the prerequisites, the `$JENKINS_HOME` path should be `c:\Users\<your_user>\.jenkins\`. 
+
+If the `email-templates` directory does not exist, create it in `$JENKINS_HOME`.
+
+Go to Manage Jenkins -> Configrue System -> Extended E-Mail Notification, under Default Content, type `${SCRIPT, template="groovy.template"}`. Save.
