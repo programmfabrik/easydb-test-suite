@@ -10,7 +10,7 @@ The premise of the Jenkins project below is to outline the technical details inv
 To integrate each project into a new machine, simply follow the steps outlined below in the [Prerequisites](#prerequisites), and set up the rest as specified in  [Installation/Steps](#installation-steps).
 
 ## Table of Contents
-
+ - [Information](#information)
  - [Prerequisites](#prerequisites)
  - [Installation/Steps](#installation-steps)
  - [1. Easydb Update Instance](#1-easydb-update-instance)
@@ -19,6 +19,16 @@ To integrate each project into a new machine, simply follow the steps outlined b
  - [Running Sequentially](#running-sequentially-optional)
  - [dropdb.sh script in VM](#dropdb-sh-script-in-root-home-of-vm)
  - [Email Tempalte](#email-template)
+
+### Information
+
+---
+
+The URL of the Jenkins project running on PC26 is `10.122.3.176`. 
+- Login: admin
+- Pass: easydbrules
+
+
 
 
 ### Prerequisites
