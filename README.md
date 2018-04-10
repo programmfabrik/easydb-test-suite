@@ -12,12 +12,12 @@ To integrate each project into a new machine, simply follow the steps outlined b
 ## Table of Contents
  - [Information](#information)
  - [Prerequisites](#prerequisites)
- - [Installation/Steps](#installation-steps)
+ - [Installation/Steps](#installationsteps)
  - [1. Easydb Update Instance](#1-easydb-update-instance)
  - [2. Drop Database for Jenkins](#2-drop-db-for-jenkins)
  - [3. Testcafe Run on Browser](#3-testcafe-run-on-browser)
  - [Running Sequentially](#running-sequentially-optional)
- - [dropdb.sh script in VM](#dropdb-sh-script-in-root-home-of-vm)
+ - [dropdb.sh script in VM](#dropdbsh-script-in-roothome-of-vm)
  - [Email Tempalte](#email-template)
 
 ### Information
