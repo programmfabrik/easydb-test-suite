@@ -111,7 +111,7 @@ Open a new freestyle project from Jenkins homepage and copy contents into respec
 
 Open a new freestyle project from Jenkins homepage and copy contents into respective fields.
 
-The <BROWSER> input should be either `chrome`,`firefox`,`edge`, or `ie`.
+The `<BROWSER>` input should be either `chrome`,`firefox`,`edge`, or `ie`.
 
 |Section | Option | Content |
 |--|--|--|
