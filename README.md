@@ -7,7 +7,7 @@ This repo hosts the TestCafe tests for the easydb application. The intent is for
 
 
 The premise of the Jenkins project below is to outline the technical details involved in each project which runs and manages the TestCafe Continuous Integration project. 
-To integrate each project into a new machine, simply follow the steps outlined below in the [Prerequisites](#prerequisites), and set up the rest as specified in  [Installation/Steps](#installation-steps).
+To integrate each project into a new machine, simply follow the steps outlined below in the [Prerequisites](#prerequisites), and set up the rest as specified in  [Installation/Steps](#installationsteps).
 
 ## Table of Contents
  - [Information](#information)
