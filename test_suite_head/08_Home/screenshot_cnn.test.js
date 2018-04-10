@@ -16,5 +16,9 @@
     },
     "1.Take a screenshot3": function() {
         act.screenshot();
+    },
+    '5.Click span "Übernehmen"': function() {
+        act.click('[data-qa="language-control-apply-button"] .cui-button-center');
     }
+
 };
