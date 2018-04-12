@@ -10,7 +10,7 @@
         act.click('[data-qa="datamodel-extra-button"] .fa-angle-down');
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Click span "CSV-Upload"': function() {
-        act.click(":containsExcludeChildren(Datenmodell hochladen (CSV))");
+        act.click(":containsExcludeChildren(Datenmodell hochladen CSV)");
     },"1.Take a screenshot": function() {act.screenshot();},
     '3.Upload "easydb-schema-7.csv" file': function() {
         act.upload("#cui-file-upload-button", "./uploads/easydb-schema-7.csv");
