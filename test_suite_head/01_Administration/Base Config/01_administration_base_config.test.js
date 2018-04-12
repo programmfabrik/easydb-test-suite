@@ -252,8 +252,17 @@
 
 
 "@test"["06_Anmelden_Click_Everything"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
+    "1.Wait 50 milliseconds": function() {
+        act.wait(5000);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "1.Click <i>": function() {
+        act.click('[ez5-loca-key="root.menu.submenu.administration"] .fa-cogs');
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "BasisKonfiguration"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(BasisKonfiguration)").eq(1);
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Click span "Anmelden"': function() {
         var actionTarget = function() {
@@ -315,8 +324,17 @@
 };
 
 "@test"["07_Anmelden_Reset"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
+    "1.Wait 50 milliseconds": function() {
+        act.wait(5000);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "1.Click <i>": function() {
+        act.click('[ez5-loca-key="root.menu.submenu.administration"] .fa-cogs');
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "BasisKonfiguration"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(BasisKonfiguration)").eq(1);
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Click span "Anmelden"': function() {
         var actionTarget = function() {
@@ -354,8 +372,17 @@
 };
 
 "@test"["08_Design_Settings"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
+    "1.Wait 50 milliseconds": function() {
+        act.wait(5000);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "1.Click <i>": function() {
+        act.click('[ez5-loca-key="root.menu.submenu.administration"] .fa-cogs');
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "BasisKonfiguration"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(BasisKonfiguration)").eq(1);
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Click span "Design"': function() {
         act.click('[data-qa="base-config-manager-css-tab-button"] .cui-button-center');
@@ -381,8 +408,17 @@
 };
 
 "@test"["09_Export_Settings"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
+    "1.Wait 50 milliseconds": function() {
+        act.wait(5000);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "1.Click <i>": function() {
+        act.click('[ez5-loca-key="root.menu.submenu.administration"] .fa-cogs');
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "BasisKonfiguration"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(BasisKonfiguration)").eq(1);
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Dblclick span "Export und OAI/PMH"': function() {
         act.dblclick('[data-qa="base-config-manager-export-tab-button"] .cui-button-center');
@@ -408,8 +444,17 @@
 };
 
 "@test"["10_Cloud_Dienstleister"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
+    "1.Wait 50 milliseconds": function() {
+        act.wait(5000);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "1.Click <i>": function() {
+        act.click('[ez5-loca-key="root.menu.submenu.administration"] .fa-cogs');
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "BasisKonfiguration"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(BasisKonfiguration)").eq(1);
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Click span "Cloud-Dienstleister"': function() {
         act.click('[data-qa="base-config-manager-cloud_services-tab-button"] .cui-button-center');
