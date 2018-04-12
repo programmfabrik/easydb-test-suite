@@ -136,7 +136,7 @@
  
 <!-- CHANGE SET -->
 <% changeSet = build.changeSet
-if (changeSet != null) {
+if (false) {//(changeSet != null) {
   hadChanges = false %>
   <h2>Changes</h2>
   <ul>
@@ -207,7 +207,7 @@ if (artifacts != null && artifacts.size() > 0) { %>
     date = newName.substring(newName.indexOf("/201"),newName.indexOf("/test-"));
     datesub = date.substring(10,13);
     datesub = datesub.replace("-","_");
-    date = date.replace(date.substring(10,13), datesub);
+    date = date.substring(0,10) + datesub +  date.substring(13) 
     newName = newName.replace(newName.substring(newName.indexOf("/201"),newName.indexOf("/test-")), date)   ;
     it.newName = newName.substring(0,newName.length()-1);
 
@@ -235,11 +235,10 @@ if (artifacts != null && artifacts.size() > 0) { %>
     newName = it.displayName.substring(it.displayName.indexOf(folderName));
 
     newName = "file://samba/programmfabrik/Qualitaetssicherung/Tests/TestCafe/" + newName.replace("_","-").replace("-201","/201").replace("-test-","/test-");
-
     date = newName.substring(newName.indexOf("/201"),newName.indexOf("/test-"));
     datesub = date.substring(10,13);
     datesub = datesub.replace("-","_");
-    date = date.replace(date.substring(10,13), datesub);
+    date = date.substring(0,10) + datesub +  date.substring(13) 
     newName = newName.replace(newName.substring(newName.indexOf("/201"),newName.indexOf("/test-")), date)   ;
     it.newName = newName.substring(0,newName.length()-1);
 
