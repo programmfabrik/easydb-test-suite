@@ -17,7 +17,10 @@
         act.upload("#cui-file-upload-button", "./uploads/easydb-peter-datamodel-HEAD-10.json");
     },"1.Take a screenshot": function() {act.screenshot();},
     '4.Click span "Ja"': function() {
-        act.click(":containsExcludeChildren(Ja)");
+        act.click(":containsExcludeChildren(ok)");
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '4.Click span "Neu Laden"': function() {
+        act.click(":containsExcludeChildren(Neu Laden)");
     },"1.Take a screenshot": function() {act.screenshot();},
     "5.Click <i>": function() {
         act.click('[data-qa="datamodel-extra-button"] .fa-angle-down');
