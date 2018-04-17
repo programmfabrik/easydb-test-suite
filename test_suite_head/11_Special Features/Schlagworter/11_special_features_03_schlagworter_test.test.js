@@ -30,7 +30,7 @@
         act.click(":containsExcludeChildren(Anzeigen Detailansicht)");
     },"1.Take a screenshot": function() {act.screenshot();},
     '7.Dblclick span "daten_mit_schlagwor..."': function() {
-        act.dblclick(":containsExcludeChildren(datenmitschlagwortallfields)");
+        act.dblclick(":containsExcludeChildren(Dateien mit schlagwort)");
     }
 };
 
@@ -73,7 +73,7 @@
         act.click(":containsExcludeChildren(Anzeigen Detailansicht)");
     },"1.Take a screenshot": function() {act.screenshot();},
     '8.Dblclick span "daten_mit_schlagwor..."': function() {
-        act.dblclick(":containsExcludeChildren(datenmitschlagwortallfields)");
+        act.dblclick(":containsExcludeChildren(Dateien mit schlagwort)");
     }
 };
 
