@@ -240,7 +240,7 @@
         act.wait(5e3);
     },"1.Take a screenshot": function() {act.screenshot();},
     '7.Click span "Recherche"': function() {
-        act.click('[title="root.menu.top.menu.main"] .cui-button-center');
+        act.click('[title="root.menu.top.menu.main"] .cui-button-left');
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Rclick span "svg"': function() {
         var actionTarget = function() {
