@@ -14,7 +14,7 @@
         act.click(":containsExcludeChildren(Datenmodell hochladen JSON)");
     },"1.Take a screenshot": function() {act.screenshot();},
     '3.Upload "easydb-schema-7.csv" file': function() {
-        act.upload("#cui-file-upload-button", "./uploads/easydb-peter-datamodel-HEAD-10.json");
+        act.upload("#cui-file-upload-button", "./uploads/easydb-testing-datamodel-HEAD-2.json");
     },"1.Take a screenshot": function() {act.screenshot();},
     '4.Click span "Ja"': function() {
         act.click(":containsExcludeChildren(ok)");
