@@ -17,7 +17,7 @@
         act.upload("#cui-file-upload-button", "./uploads/easydb-testing-datamodel-HEAD-2.json");
     },"1.Take a screenshot": function() {act.screenshot();},
     '4.Click span "Ja"': function() {
-        act.click(":containsExcludeChildren(ok)");
+        act.click(":containsExcludeChildren(Ok)");
     },"1.Take a screenshot": function() {act.screenshot();},
     '4.Click span "Neu Laden"': function() {
         act.click(":containsExcludeChildren(Neu Laden)");
@@ -84,7 +84,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     '16.Click span "dateien__all_fields"': function() {
         var actionTarget = function() {
-            return $('.datamodel-list-view-mask [row="10"] span');
+            return $('.datamodel-list-view-mask [row="9"] span');
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
