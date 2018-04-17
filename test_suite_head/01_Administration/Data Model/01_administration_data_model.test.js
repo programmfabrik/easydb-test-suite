@@ -22,6 +22,9 @@
     '4.Click span "Neu Laden"': function() {
         act.click(":containsExcludeChildren(Neu Laden)");
     },"1.Take a screenshot": function() {act.screenshot();},
+    "1.Wait 4000 milliseconds": function() {
+        act.wait(8e3);
+    },"1.Take a screenshot": function() {act.screenshot();},
     "5.Click <i>": function() {
         act.click('[data-qa="datamodel-extra-button"] .fa-angle-down');
     },"1.Take a screenshot": function() {act.screenshot();},
