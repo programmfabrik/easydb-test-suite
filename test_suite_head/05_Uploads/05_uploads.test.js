@@ -90,12 +90,6 @@
     "3.Click <i>": function() {
         act.click('[ez5-loca-key="editor.pullout.asset_browser"] .cui-button-left');
     },"1.Take a screenshot": function() {act.screenshot();},
-    "4.Click div": function() {
-        var actionTarget = function() {
-            return $(".eas-image.landscape").eq(1);
-        };
-        act.click(actionTarget);
-    },"1.Take a screenshot": function() {act.screenshot();},
     '5.Click span "Info"': function() {
         act.click('[ez5-loca-key="asset.browser.info.control.info_button"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
