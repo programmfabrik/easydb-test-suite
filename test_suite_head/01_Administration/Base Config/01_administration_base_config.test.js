@@ -270,12 +270,7 @@
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '3.Click span "Cookie-Absicherung..."': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(CookieAbsicherung für Session aktivieren)").eq(1);
-        };
-        act.click(actionTarget);
-    },"1.Take a screenshot": function() {act.screenshot();},
+    
     '4.Click span "Anonym über..."': function() {
         var actionTarget = function() {
             return $(":containsExcludeChildren(Anonym über Internet erlaubt)").eq(1);
@@ -342,12 +337,7 @@
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '3.Click span "Cookie-Absicherung..."': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(CookieAbsicherung für Session aktivieren)").eq(1);
-        };
-        act.click(actionTarget);
-    },"1.Take a screenshot": function() {act.screenshot();},
+    
     '4.Click span "Anonym über..."': function() {
         var actionTarget = function() {
             return $(":containsExcludeChildren(Anonym über Internet erlaubt)").eq(1);

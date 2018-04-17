@@ -75,7 +75,10 @@
         act.click(actionTarget);
     },
     '8.Click span "Ok"': function() {
-        act.click("#button-text-4234");
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Ok)").eq(1);
+        };
+        act.click(actionTarget);
     },
     '9.Click div "Meine Mappen"': function() {
         act.click(":containsExcludeChildren(Meine Mappen)");
