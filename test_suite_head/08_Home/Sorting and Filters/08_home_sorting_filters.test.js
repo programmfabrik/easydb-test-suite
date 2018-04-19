@@ -61,6 +61,12 @@
     "1.Wait 1 milliseconds": function() {
         act.wait(5000);
     },"1.Take a screenshot": function() {act.screenshot();},
+    "5.Click Main menu": function() {
+        act.click('[ez5-loca-key="root.menu.burger"] .cui-button-left');
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '6.Click span "Mitteilungen"': function() {
+        act.click('[data-qa="root-menu-app-admin-menu-admin_messages"] .cui-button-center');
+    },"1.Take a screenshot": function() {act.screenshot();},
     "2.Click <i>": function() {
         act.click(".cui-button[data-qa='root-menu-app-top-menu-new_objects'] .fa-plus");
     },"1.Take a screenshot": function() {act.screenshot();},
