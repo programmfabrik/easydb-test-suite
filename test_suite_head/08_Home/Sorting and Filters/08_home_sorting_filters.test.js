@@ -200,10 +200,7 @@
         act.wait(5e3);
     },"1.Take a screenshot": function() {act.screenshot();},
     '2.Click span "Filter"': function() {
-        var actionTarget = function() {
-            return $(":containsExcludeChildren(Filter)").eq(0);
-        };
-        act.click(actionTarget);
+        act.click('[title="search.main.button.filter"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
     '3.Click span "Bilder"': function() {
         act.click(":containsExcludeChildren(Bilder)");
