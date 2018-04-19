@@ -25,37 +25,9 @@
     }
 };
 
-"@test"["02_Migration_Import"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(5e3);
-    },"1.Take a screenshot": function() {act.screenshot();},
-    "2.Click <i>": function() {
-        var actionTarget = function() {
-            return $(".fa.fa-bars").eq(1);
-        };
-        act.click(actionTarget);
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '3.Click span "Werkzeuge"': function() {
-        act.click(":containsExcludeChildren(Werkzeuge)");
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '4.Click span "Werkzeuge"': function() {
-        act.click(":containsExcludeChildren(Werkzeuge)");
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '5.Click span "Migration"': function() {
-        act.click(":containsExcludeChildren(Migration)");
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '3.Click span "Import"': function() {
-        act.click('[for="cui-file-upload-button"] .cui-button-center');
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '4.Upload "testing-a11b776d-06a6-4e55-a569-86d252d756ff-config-dump (1).json" file': function() {
-        act.upload("#cui-file-upload-button", "./uploads/testing-a11b776d-06a6-4e55-a569-86d252d756ff-config-dump (1).json");
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '5.Click span "Fertig"': function() {
-        act.click(":containsExcludeChildren(Fertig)");
-    }
-};
 
-"@test"["03_Migration_Import_wrong_datatype"] = {
+
+"@test"["02_Migration_Import_wrong_datatype"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },"1.Take a screenshot": function() {act.screenshot();},
