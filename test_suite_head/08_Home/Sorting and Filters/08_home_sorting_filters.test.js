@@ -227,7 +227,10 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     '4.Click span "Aktueller Monat"': function() {
         act.click(":containsExcludeChildren(JPG)");
-    }
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "Filter"': function() {
+        act.click('[title="search.main.button.filter"] .cui-button-center');
+    },"1.Take a screenshot": function() {act.screenshot();},
 };
 
 
