@@ -37,7 +37,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "2.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -57,7 +57,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "6.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -74,7 +74,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "9.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -91,7 +91,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "6.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -108,7 +108,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "12.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -138,7 +138,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "22.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -153,7 +153,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "2.Click div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0)
+            return $(".ez5-browser").eq(0)
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -192,7 +192,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "2.Rclick div": function() {
         var actionTarget = function() {
-            return $(".ez5-info").eq(0);
+            return $(".ez5-browser").eq(0);
         };
         act.rclick(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
