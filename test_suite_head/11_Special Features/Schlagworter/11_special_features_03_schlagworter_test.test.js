@@ -28,10 +28,7 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     '6.Click span "Anzeigen..."': function() {
         act.click(":containsExcludeChildren(Anzeigen Detailansicht)");
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '7.Dblclick span "daten_mit_schlagwor..."': function() {
-        act.dblclick(":containsExcludeChildren(Dateien mit schlagwort)");
-    }
+    },"1.Take a screenshot": function() {act.screenshot();}
 };
 
 "@test"["02_Schalgwort_Expert_Search"] = {
@@ -71,9 +68,6 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     '7.Click span "Anzeigen..."': function() {
         act.click(":containsExcludeChildren(Anzeigen Detailansicht)");
-    },"1.Take a screenshot": function() {act.screenshot();},
-    '8.Dblclick span "daten_mit_schlagwor..."': function() {
-        act.dblclick(":containsExcludeChildren(Dateien mit schlagwort)");
-    }
+    },"1.Take a screenshot": function() {act.screenshot();}
 };
 
