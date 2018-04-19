@@ -46,6 +46,9 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     '12.Click span "Hierarchisch..."': function() {
         act.click(":containsExcludeChildren(Hierarchisch anzeigen)");
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "3.Click <svg>": function() {
+        act.click('[ez5-loca-key="main.search.view.result-standard"] .cui-button-left');
     }
 };
 

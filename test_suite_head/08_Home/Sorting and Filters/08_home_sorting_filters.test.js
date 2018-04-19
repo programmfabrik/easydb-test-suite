@@ -167,6 +167,29 @@
     }
 };
 
+"@test"["06_Two_Sortings_Reset"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(5e3);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '2.Click span "Sortierung:..."': function() {
+        act.click(":containsExcludeChildren(Sortierung)");
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "3.Click span": function() {
+        var actionTarget = function() {
+            return $(".cui-button-left").find(" > span:nth(0)").eq(0);
+        };
+        act.click(actionTarget);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "4.Click span": function() {
+        var actionTarget = function() {
+            return $(".cui-button-left").find(" > span:nth(0)").eq(2);
+        };
+        act.click(actionTarget);
+    },"1.Take a screenshot": function() {act.screenshot();},
+    '5.Click span "Übernehmen"': function() {
+        act.click(":containsExcludeChildren(Anwenden)");
+    }
+};
 
 "@test"["07_Sort_Specific"] = {
     "1.Wait 5000 milliseconds": function() {
