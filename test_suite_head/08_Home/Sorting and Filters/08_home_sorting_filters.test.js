@@ -199,9 +199,6 @@
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '2.Click span "Filter"': function() {
-        act.click('[title="search.main.button.filter"] .cui-button-center');
-    },"1.Take a screenshot": function() {act.screenshot();},
     '3.Click span "Bilder"': function() {
         act.click(":containsExcludeChildren(Bilder)");
     },"1.Take a screenshot": function() {act.screenshot();},
