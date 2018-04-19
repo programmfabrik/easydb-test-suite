@@ -176,13 +176,13 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "3.Click span": function() {
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(0);
+            return $(".fa.fa-check").eq(0);
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     "4.Click span": function() {
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(2);
+            return $(".fa.fa-check");
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
