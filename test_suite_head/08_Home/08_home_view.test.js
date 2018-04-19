@@ -49,7 +49,10 @@
     },"1.Take a screenshot": function() {act.screenshot();},
     "3.Click <svg>": function() {
         act.click('[ez5-loca-key="main.search.view.result-standard"] .cui-button-left');
-    }
+    },"1.Take a screenshot": function() {act.screenshot();},
+    "3.Click <svg>": function() {
+        act.click('[ez5-loca-key="main.search.view.result-standard"] .cui-button-left');
+    },"1.Take a screenshot": function() {act.screenshot();}
 };
 
 "@test"["02_View_Hierarchisch_Test"] = {
