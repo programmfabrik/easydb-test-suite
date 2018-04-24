@@ -17,8 +17,8 @@
             return  $('[aria-label="Schließen"] .svg-close');
         };
         act.click(actionTarget);
-    }
-
+        }
+};
 
 "@test"["02_Click_Hilfe"] = {
     "1.Wait 5000 milliseconds": function() {
@@ -38,8 +38,8 @@
     },
     "28.Take a screenshot": function() {
         act.screenshot();
-    }
-
+        }
+};
 "@test"["03_Unterrichtsmodulen"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
@@ -49,8 +49,8 @@
     },
     "28.Take a screenshot": function() {
         act.screenshot();
-    }
-
+        }
+};
 "@test"["04_nach_OER"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
@@ -60,8 +60,8 @@
     },
     "28.Take a screenshot": function() {
         act.screenshot();
-    }
-
+        }
+};
 "@test"["05_Sorting"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
@@ -89,8 +89,8 @@
     },
     "28.Take a screenshot": function() {
         act.screenshot();
-    }
-    
+        }
+};    
 "@test"["06_Filters"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
@@ -118,8 +118,8 @@
     },
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
-    }
-"@test"["07_Verleih_medien"] = {
+        }
+};"@test"["07_Verleih_medien"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },     
@@ -132,8 +132,8 @@
     },
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
-    }
-
+        }
+};
 "@test"["08_Search"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
