@@ -1,7 +1,8 @@
 "@fixture Anonym";
 "@page http://lmz-stuttgart.5.easydb.de/as";
 "@auth lmz-stuttgart:7zhysgnZ";
-"@test"["Anonym"] = {
+
+"@test"["01_Click_Register"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },
@@ -12,8 +13,17 @@
         act.screenshot();
     },
     "4.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
-    },
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
+    }
+
+
+"@test"["02_Click_Hilfe"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },  
     '5.Click span "Hilfe"': function() {
         act.click(":containsExcludeChildren(Hilfe)");
     },
@@ -21,18 +31,41 @@
         act.screenshot();
     },
     "7.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+        var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     },
-    
+    "28.Take a screenshot": function() {
+        act.screenshot();
+    }
+
+"@test"["03_Unterrichtsmodulen"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },  
     '24.Click span "Nur nach..."': function() {
         act.click(":containsExcludeChildren(nur nach Unterrichtsmodulen suchen)");
     },
-    "25.Wait 1000 milliseconds": function() {
-        act.wait(1e3);
-    },
+    "28.Take a screenshot": function() {
+        act.screenshot();
+    }
+
+"@test"["04_nach_OER"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },  
     '26.Click span "OER (Open..."': function() {
         act.click(":containsExcludeChildren(nach OER)");
     },
+    "28.Take a screenshot": function() {
+        act.screenshot();
+    }
+
+"@test"["05_Sorting"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },  
     '27.Click span "Nur empfohlene..."': function() {
         act.click(":containsExcludeChildren(Besonders empfohlene Medien)");
     },
@@ -54,11 +87,14 @@
     '33.Click span "Nur nach..."': function() {
         act.click(":containsExcludeChildren(nur nach Unterrichtsmodulen suchen)");
     },
+    "28.Take a screenshot": function() {
+        act.screenshot();
+    }
+    
+"@test"["06_Filters"] = {
     "1.Wait 5000 milliseconds": function() {
-        act.wait(3e3);
-    },
-    
-    
+        act.wait(7e3);
+    },      
     "38.Click <i>": function() {
         act.click('[cui-data-field-name="fach"] .fa-angle-down');
     },
@@ -82,8 +118,12 @@
     },
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
-    },
-    
+    }
+"@test"["07_Verleih_medien"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },     
+
     '48.Click span "nur Verleih-Medien"': function() {
         act.click(":containsExcludeChildren(nur VerleihMedien)");
     },
@@ -92,8 +132,12 @@
     },
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
-    },
-    
+    }
+
+"@test"["08_Search"] = {
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },   
     "60.Click div": function() {
         act.click(".cui-horizontal-layout-center.ez5-search-input-query");
     },
@@ -108,5 +152,8 @@
     },
     "63.Click <i>": function() {
         act.click(".fa.fa-search");
+    },
+    "49.Take a screenshot": function() {
+        act.screenshot();
     }
 };
