@@ -217,6 +217,12 @@
     "7.Click div": function() {
         act.click(".cui-layer-backdrop");
     },"1.Take a screenshot": function() {act.screenshot();},
+    "15.Click div": function() {
+        var actionTarget = function() {
+            return $(".cui-horizontal-layout-center").eq(0);
+        };
+        act.click(actionTarget);
+    },"1.Take a screenshot": function() {act.screenshot();},
     '8.Click span "Benutzer/Gruppe"': function() {
         act.click('[row="4"] [title="acl.manager.button.open_popover"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
