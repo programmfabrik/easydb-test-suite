@@ -46,9 +46,10 @@
     '13.Click span "Tags anpassen"': function() {
         act.click('[row="2"] [col="7"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
-    "14.Click span": function() {
+    "5.Click span": function() {
+        var row = $(".ez5-tag-form-tag-row")[0];
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(3);
+            return $(row).find("span")[1];
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -58,9 +59,10 @@
     '16.Click span "Tags anpassen"': function() {
         act.click('[row="2"] [col="8"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
-    "17.Click span": function() {
+    "5.Click span": function() {
+        var row = $(".ez5-tag-form-tag-row")[1];
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(7);
+            return $(row).find("span")[1];
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -135,9 +137,10 @@
     '13.Click span "Tags anpassen"': function() {
         act.click('[row="3"] [col="7"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
-   "2.Click span": function() {
+   "5.Click span": function() {
+        var row = $(".ez5-tag-form-tag-row")[1];
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(9);
+            return $(row).find("span")[1];
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -148,8 +151,9 @@
         act.click('[row="3"] [col="8"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
     "5.Click span": function() {
+        var row = $(".ez5-tag-form-tag-row")[2];
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(14);
+            return $(row).find("span")[1];
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
@@ -226,9 +230,10 @@
     '16.Click span "Tags anpassen"': function() {
         act.click('[row="4"] [col="8"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
-    "8.Click span": function() {
+    "5.Click span": function() {
+        var row = $(".ez5-tag-form-tag-row")[2];
         var actionTarget = function() {
-            return $(".cui-button-left").find(" > span:nth(0)").eq(22);
+            return $(row).find("span")[1];
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
