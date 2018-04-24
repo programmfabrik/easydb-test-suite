@@ -148,7 +148,10 @@
         act.click(".cui-layer-backdrop");
     },"1.Take a screenshot": function() {act.screenshot();},
     "15.Click div": function() {
-        act.click(".cui-horizontal-layout-center");
+        var actionTarget = function() {
+            return $(".cui-horizontal-layout-center").eq(0);
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     '16.Click span "Tags anpassen"': function() {
         act.click('[row="3"] [col="8"] .cui-button-center');
