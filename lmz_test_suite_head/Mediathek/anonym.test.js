@@ -12,7 +12,10 @@
         act.screenshot();
     },
     "4.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     },
     '5.Click span "Hilfe"': function() {
         act.click(":containsExcludeChildren(Hilfe)");
@@ -20,8 +23,11 @@
     "6.Take a screenshot": function() {
         act.screenshot();
     },
-    "7.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+    "4.Click use": function() {
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     }
 }
 

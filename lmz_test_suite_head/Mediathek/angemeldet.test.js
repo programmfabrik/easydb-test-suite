@@ -47,8 +47,11 @@
     "12.Take a screenshot": function() {
         act.screenshot();
     },
-    "13.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+    "4.Click use": function() {
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     },
     '14.Click span "Ausleihen"': function() {
         var actionTarget = function() {
@@ -71,8 +74,11 @@
     "19.Take a screenshot": function() {
         act.screenshot();
     },
-    "20.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+    "4.Click use": function() {
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     },
     '21.Click span "ZIP-Download"': function() {
         act.click(":containsExcludeChildren(ZIPDownload)");
@@ -80,8 +86,11 @@
     "22.Take a screenshot": function() {
         act.screenshot();
     },
-    "23.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+    "4.Click use": function() {
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     },
     '24.Click span "Einzelmedien"': function() {
         var actionTarget = function() {
@@ -104,8 +113,11 @@
     "27.Take a screenshot": function() {
         act.screenshot();
     },
-    "28.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+    "4.Click use": function() {
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     },
     '29.Click span "Download"': function() {
         var actionTarget = function() {
@@ -116,8 +128,11 @@
     "30.Take a screenshot": function() {
         act.screenshot();
     },
-    "31.Click use": function() {
-        act.click("body > div:nth(6) > div:nth(1) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(2) > div:nth(0) > div:nth(0) > div:nth(0) > div:nth(0) > svg:nth(0) > use:nth(0)");
+    "4.Click use": function() {
+         var actionTarget = function() {
+            return  $('[aria-label="Schließen"] .svg-close');
+        };
+        act.click(actionTarget);
     }
 };
 
