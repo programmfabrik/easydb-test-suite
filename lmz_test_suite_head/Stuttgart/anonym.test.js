@@ -119,22 +119,8 @@
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
         }
-};"@test"["07_Verleih_medien"] = {
-    "1.Wait 5000 milliseconds": function() {
-        act.wait(7e3);
-    },     
 
-    '48.Click span "nur Verleih-Medien"': function() {
-        act.click(":containsExcludeChildren(nur VerleihMedien)");
-    },
-    "49.Take a screenshot": function() {
-        act.screenshot();
-    },
-    '44.Click span "Zurücksetzen"': function() {
-        act.click(":containsExcludeChildren(Zurücksetzen)");
-        }
-};
-"@test"["08_Search"] = {
+"@test"["07_Search"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },   
