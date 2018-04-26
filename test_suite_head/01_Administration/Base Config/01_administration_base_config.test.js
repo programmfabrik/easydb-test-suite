@@ -271,24 +271,44 @@
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     
-    '4.Click span "Anonym über..."': function() {
+    '222.Click span "Cookies"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Anonym über Internet erlaubt)").eq(1);
+            return $('[data-qa="base-config-manager-session.use_cookie-value-checkbox"] .cui-button-center');
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '5.Click span "Anonym über..."': function() {
+
+    '223.Click span "Internet"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Anonym über Intranet erlaubt)").eq(1);
+            return $('[data-qa="base-config-manager-login.internet-value-checkbox"] .cui-button-center');
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '6.Click span "Vergessene..."': function() {
-        act.click(":containsExcludeChildren(Vergessene Passwörter können angefordert werden)");
+
+    '224.Click span "Intranet"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="base-config-manager-login.intranet-value-checkbox"] .cui-button-center');
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '7.Click span "Im Login-Dialog..."': function() {
-        act.click(":containsExcludeChildren(Im LoginDialog anzeigen)");
+
+
+    '225.Click span "Forgotten Password"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="base-config-manager-login.forgotten_password_process-value-checkbox"] .cui-button-center');
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
+
+
+    '226.Click span "Dialog login"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="base-config-manager-login.forgotten_password_process-show_in_login_dialog-checkbox"] .cui-button-center');
+        };
+        act.click(actionTarget);
+    },"1.Take a screenshot": function() {act.screenshot();},
+
+
     "8.Click <i>": function() {
         var actionTarget = function() {
             return $(".fa.fa-ellipsis-v").eq(0);
@@ -338,24 +358,43 @@
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     
-    '4.Click span "Anonym über..."': function() {
+    '222.Click span "Cookies"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Anonym über Internet erlaubt)").eq(1);
+            return $('[data-qa="base-config-manager-session.use_cookie-value-checkbox"] .cui-button-center');
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '5.Click span "Anonym über..."': function() {
+
+    '223.Click span "Internet"': function() {
         var actionTarget = function() {
-            return $(":containsExcludeChildren(Anonym über Intranet erlaubt)").eq(1);
+            return $('[data-qa="base-config-manager-login.internet-value-checkbox"] .cui-button-center');
         };
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '6.Click span "Vergessene..."': function() {
-        act.click(":containsExcludeChildren(Vergessene Passwörter können angefordert werden)");
+
+    '224.Click span "Intranet"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="base-config-manager-login.intranet-value-checkbox"] .cui-button-center');
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
-    '7.Click span "Im Login-Dialog..."': function() {
-        act.click(":containsExcludeChildren(Im LoginDialog anzeigen)");
+
+
+    '225.Click span "Forgotten Password"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="base-config-manager-login.forgotten_password_process-value-checkbox"] .cui-button-center');
+        };
+        act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
+
+
+    '226.Click span "Dialog login"': function() {
+        var actionTarget = function() {
+            return $('[data-qa="base-config-manager-login.forgotten_password_process-show_in_login_dialog-checkbox"] .cui-button-center');
+        };
+        act.click(actionTarget);
+    },"1.Take a screenshot": function() {act.screenshot();},
+
     '16.Click div "base.config.manager..."': function() {
         act.click('[data-qa="base-config-manager-save-button"] .cui-button-center');
     }
