@@ -42,7 +42,7 @@ Also its helpful for the Virtual Machine to have a static IP address, at the mom
 2. Make sure [Java](https://www.java.com/en/download/manual.jsp) is installed on the new host machine and added to the Environment Path variable.
 3. Make sure [Git (for Windows)](http://git-scm.com/download/win ) is installed on the new host machine and added to the Environment Path variable.
 4. Make sure [Node.js and NPM](https://nodejs.org/en/) are installed on the new host machine and added to the Environment Path variable.
-5. Download of [Cygwin terminal](https://cygwin.com/install.html) with SSH package, preferrably in defualt location "c:/cygwin64".
+5. Download and install [Cygwin terminal](https://cygwin.com/install.html) with the SSH package, preferrably in default location "c:/cygwin64".
 6. Download and install [Jenkins](https://jenkins.io/download/).
 7. The easydb5-testing-vm Virtual Machine must be running, somewhere on the local network.
 8. Prevent SSH sign on during run time: create an SSH key for the admin user of the host machine and copy the SSH key to the VM: Open cygwin terminal, run `ssh-keygen`, then `ssh-copy-id root@<ip_of_vm>`.
