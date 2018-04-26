@@ -122,7 +122,7 @@ The `<BROWSER>` input should be either `chrome`,`firefox`,`edge`, or `ie`.
 |Build Triggers|||
 |Build Environment|||
 |Build|Execute Windows Batch Command| `npm install testcafe@0.18.6 testcafe-reporter-xunit`	|
-||Execute Windows Batch Command|`node_modules/.bin/testcafe <BROWSER> test_suite_head_screenshots/**/* --screenshots ../results_screenshots -r xunit:results_<BROWSER>.xml`|
+||Execute Windows Batch Command|`node_modules/.bin/testcafe <BROWSER> test_suite_head/**/* --screenshots ../results_screenshots/<BROWSER> -r xunit:results_<BROWSER>.xml`|
 |Post Build|Publish JUnit test result report| `results_<BROWSER>.xml`|
 ||Editable Email Notification| Default Content |
 
