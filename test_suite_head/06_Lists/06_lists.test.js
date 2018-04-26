@@ -91,7 +91,10 @@
     '1.Click span "Dateien (DE)"': function() {
         act.click(":containsExcludeChildren(Dateien DE)");
     },"1.Take a screenshot": function() {act.screenshot();},
-    '2.Click span "Alle Felder (DE)"': function() {
-        act.click(":containsExcludeChildren(Alle Felder DE)").eq(0);
+    '4.Click span "Alle Felder (DE)"': function() {
+        var actionTarget = function() {
+            return $(":containsExcludeChildren(Alle Felder DE)").eq(0);
+        };
+        act.click(actionTarget);
     }
 };
