@@ -1,4 +1,4 @@
-"@fixture Anonym";
+"@fixture Stuttgart_Anonym";
 "@page http://lmz-stuttgart.5.easydb.de/as";
 "@auth lmz-stuttgart:7zhysgnZ";
 

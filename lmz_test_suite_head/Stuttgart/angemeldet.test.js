@@ -1,4 +1,4 @@
-"@fixture Angemeldet";
+"@fixture Stuttgart_Angemeldet";
 "@page http://lmz-stuttgart.5.easydb.de/as";
 "@auth lmz-stuttgart:7zhysgnZ";
 "@test"["Angemeldet"] = {

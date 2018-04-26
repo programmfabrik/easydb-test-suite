@@ -1,7 +1,7 @@
-"@fixture Anonym";
+"@fixture Mediathek_Anonym";
 "@page https://test-mediathek.lmz-bw.de/mediathek";
 
-"@test"["Register and Help"] = {
+"@test"["Register_and_Help"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },
@@ -31,7 +31,7 @@
     }
 }
 
-"@test"["Foot Menu"] = { 
+"@test"["Foot_Menu"] = { 
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },   
@@ -85,7 +85,7 @@
     }
 }
 
-"@test"["License MZ Karlsruhe with Checkboxes"] = {    
+"@test"["License_MZ_Karlsruhe_with_Checkboxes"] = {    
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },
@@ -136,7 +136,7 @@
     } 
 }
  
-"@test"["Sort Data"] = {    
+"@test"["Sort_Data"] = {    
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },
@@ -184,7 +184,7 @@
     } 
 }
  
-"@test"["Bildungsstandards Sortieren"] = {    
+"@test"["Bildungsstandards_Sortieren"] = {    
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },
@@ -290,7 +290,7 @@
 };
 
 
-"@test"["Search Again"] = {
+"@test"["Search_Again"] = {
     "1.Wait 5000 milliseconds": function() {
         act.wait(5e3);
     },

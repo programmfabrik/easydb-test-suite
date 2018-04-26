@@ -1,4 +1,4 @@
-"@fixture Angemeldet";
+"@fixture Mediathek_Angemeldet";
 "@page https://test-mediathek.lmz-bw.de/mediathek";
 
 "@test"["Angemeldet"] = {
