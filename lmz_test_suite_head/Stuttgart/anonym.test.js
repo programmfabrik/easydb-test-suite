@@ -119,6 +119,7 @@
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
         }
+};
 
 "@test"["07_Search"] = {
     "1.Wait 5000 milliseconds": function() {
