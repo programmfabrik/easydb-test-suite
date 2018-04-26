@@ -149,6 +149,9 @@
         };
         act.click(actionTarget);
     },
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },
     "40.Take a screenshot": function() {
         act.screenshot();
     },
@@ -161,11 +164,17 @@
     "43.Take a screenshot": function() {
         act.screenshot();
     },
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
+    },
     '44.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
     },
     '45.Click span "Film"': function() {
         act.click(":containsExcludeChildren(Film)");
+    },
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
     },
     "46.Take a screenshot": function() {
         act.screenshot();
@@ -175,6 +184,9 @@
     },
     '48.Click span "nur Verleih-Medien"': function() {
         act.click(":containsExcludeChildren(nur VerleihMedien)");
+    },
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(7e3);
     },
     "49.Take a screenshot": function() {
         act.screenshot();
