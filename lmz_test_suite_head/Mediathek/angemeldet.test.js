@@ -12,13 +12,13 @@
         var actionTarget = function() {
             return $("#login_form").find("[name='login']");
         };
-        act.type(actionTarget, "user_karlsruhe");
+        act.type(actionTarget, "user_karlsruhe1");
     },
     '4.Type in password input "password"': function() {
         var actionTarget = function() {
             return $("#login_form").find("[name='password']");
         };
-        act.type(actionTarget, "user_karlsruhe");
+        act.type(actionTarget, "user_karlsruhe1");
     },
     "5.Take a screenshot": function() {
         act.screenshot();
