@@ -182,9 +182,6 @@
     '47.Click span "Zurücksetzen"': function() {
         act.click(":containsExcludeChildren(Zurücksetzen)");
     },
-    '48.Click span "nur Verleih-Medien"': function() {
-        act.click(":containsExcludeChildren(nur VerleihMedien)");
-    },
     "1.Wait 5000 milliseconds": function() {
         act.wait(7e3);
     },
