@@ -95,6 +95,12 @@
     '30.Rclick span "Herunterladen"': function() {
         act.click(":containsExcludeChildren(Herunterladen)");
     },
+    "1.Wait 5000 milliseconds": function() {
+        act.wait(3e3);
+    },
+    "22.Take a screenshot": function() {
+        act.screenshot();
+    },
     '24.Click span "Einzelmedien"': function() {
         var actionTarget = function() {
             return $(":containsExcludeChildren(Einzelmedien)").eq(0);
@@ -139,3 +145,4 @@
     }
 };
 
+    
