@@ -1,8 +1,10 @@
+<p align="center">
+  <img src="/images/easydb-logo.png" alt="easydb test suite with Jenkins and TestCafe" />
+</p>
+
 # easydb-test-suite
 
-
-
-This repo hosts the TestCafe tests for the easydb application. The intent is for convenient access of the Jenkins Project to pull the latest changes of every run.
+> This repo hosts the TestCafe tests for the easydb application. The intent is for convenient access of the Jenkins Project to pull the latest changes of every run.
 
 ![image](/images/easydb-logo.png)
 
