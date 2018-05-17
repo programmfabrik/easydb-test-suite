@@ -35,7 +35,7 @@ The URL of the Jenkins project running on PC26 is `10.122.3.176`.
 
 If PC10 was **shut off**, these are the steps to follow to set up the Programmfabrik Testcafe Project. 
 
-##### 1. Start the linux Virtual Machine. 
+#### 1. Start the linux Virtual Machine. 
 
  - On PC10, open the Oracle Virtual Box desktop application and start the linux virtual machine as shown in the image below:
 
@@ -46,7 +46,7 @@ If PC10 was **shut off**, these are the steps to follow to set up the Programmfa
 
 ![image](/images/vmdate.png)
 
-##### 2. Start Jenkins
+#### 2. Start Jenkins
 
  - If PC10 was shut off before you started, then the Jenkins service is most likely running as the default system user. It is important that Jenkins is run as an admin user so that it may have access to other applications like chrome, firefox, ie, etc..
 
@@ -54,7 +54,7 @@ If PC10 was **shut off**, these are the steps to follow to set up the Programmfa
 
 ![image](/images/powershellcommand.png)
 
-##### 3. Open Jenkins
+#### 3. Open Jenkins
 
  - Go to the url `19.122.3.176:8080` where jenkins is being served by PC10. No login is necessary. Here you should see the homepage of the TestCafe project like the image below.
 
@@ -68,7 +68,7 @@ If PC10 was **shut off**, these are the steps to follow to set up the Programmfa
  - Click the option `build now` to start, see the configuration, or view previous builds in the results list below. 
 
 
-##### 4. Start XAMPP to serve the Test Screenshots
+#### 4. Start XAMPP to serve the Test Screenshots
 
  - Open XAMPP on PC10, click `start` next to the apache server.
 
