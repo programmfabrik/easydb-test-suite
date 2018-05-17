@@ -23,15 +23,15 @@ To integrate each project into a new machine, simply follow the steps outlined b
 
 ### Information
 
----
+
 
 The URL of the Jenkins project running on PC26 is `10.122.3.176`. 
 - Login: admin
 - Pass: easydbrules
 
+---
 
-
-### Running the Testcafe Tests
+## Running the Testcafe Tests
 
 If PC10 was **shut off**, these are the steps to follow to set up the Programmfabrik Testcafe Project. 
 
