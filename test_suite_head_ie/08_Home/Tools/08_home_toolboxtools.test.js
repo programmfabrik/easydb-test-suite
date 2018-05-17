@@ -119,7 +119,7 @@
         act.click('[title="tool.object.download"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
     '15.Click span "250px (small), 34 KB"': function() {
-        act.click(":containsExcludeChildren(250px small)");
+        act.click(":containsExcludeChildren(250px)");
     },"1.Take a screenshot": function() {act.screenshot();},
     '19.Click span "Original-Dateiname"': function() {
         act.click(":containsExcludeChildren(OriginalDateiname)");
