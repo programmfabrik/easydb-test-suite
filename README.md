@@ -33,44 +33,44 @@ The URL of the Jenkins project running on PC26 is `10.122.3.176`.
 
 ### Running the Testcafe Tests
 
-If PC10 was shut off, these are the steps to follow to set up the Programmfabrik Testcafe Project. 
+If PC10 was **shut off**, these are the steps to follow to set up the Programmfabrik Testcafe Project. 
 
 1. Start the linux Virtual Machine. 
 
-On PC10, open the Oracle Virtual Box desktop application and start the linux virtual machine as shown in the image below:
+ - On PC10, open the Oracle Virtual Box desktop application and start the linux virtual machine as shown in the image below:
 
 ![image](/images/vmrunning.png)
 
-Sign in as `root` with password `easydbrules`.
-Now make sure the date is correct in the virtual machine or else updating the instance won't be possible. Check the date by run the command `date`. If the date is incorrect, run the command `sudo ntpdate ntp.ubuntu.com`, this will update the date against an ubuntu server.
+ - Sign in as `root` with password `easydbrules`.
+ - Now make sure the date is correct in the virtual machine or else updating the instance won't be possible. Check the date by run the command `date`. If the date is incorrect, run the command `sudo ntpdate ntp.ubuntu.com`, this will update the date against an ubuntu server.
 
 ![image](/images/vmdate.png)
 
 2. Start Jenkins
 
-If PC10 was shut off before you started, then the Jenkins service is most likely running as the default system user. It is important that Jenkins is run as an admin user so that it may have access to other applications like chrome, firefox, ie, etc..
+ - If PC10 was shut off before you started, then the Jenkins service is most likely running as the default system user. It is important that Jenkins is run as an admin user so that it may have access to other applications like chrome, firefox, ie, etc..
 
-Run the command `java -jar jenkins.war` in the directory shown below in the image.
+ - Run the command `java -jar jenkins.war` in the directory shown below in the image.
 
 ![image](/images/powershellcommand.png)
 
 3. Open Jenkins
 
-Go to the url `19.122.3.176:8080` where jenkins is being served by PC10. No login is necessary. Here you should see the homepage of the TestCafe project like the image below.
+ - Go to the url `19.122.3.176:8080` where jenkins is being served by PC10. No login is necessary. Here you should see the homepage of the TestCafe project like the image below.
 
 ![image](/images/jenkinshome.png)
 
-From here you can go to the project `easydb_test_suite` to see the whole workflow of the testcafe project.
+ - From here you can go to the project `easydb_test_suite` to see the whole workflow of the testcafe project.
 
 
 ![image](/images/easydbtestsuitehome.png)
 
-Click the option `build now` to start, see the configuration, or view previous builds in the results list below. 
+ - Click the option `build now` to start, see the configuration, or view previous builds in the results list below. 
 
 
 4. Start XAMPP to serve the Test Screenshots
 
-Open XAMPP on PC10, click `start` next to the apache server.
+ - Open XAMPP on PC10, click `start` next to the apache server.
 
 
 
