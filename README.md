@@ -11,6 +11,7 @@ To integrate each project into a new machine, simply follow the steps outlined b
 
 ## Table of Contents
  - [Information](#information)
+ - [Running Testcafe](#running-the-testcafe-tests)
  - [Prerequisites](#prerequisites)
  - [Installation/Steps](#installationsteps)
  - [1. Easydb Update Instance](#1-easydb-update-instance)
@@ -27,6 +28,49 @@ To integrate each project into a new machine, simply follow the steps outlined b
 The URL of the Jenkins project running on PC26 is `10.122.3.176`. 
 - Login: admin
 - Pass: easydbrules
+
+
+
+### Running the Testcafe Tests
+
+If PC10 was shut off, these are the steps to follow to set up the Programmfabrik Testcafe Project. 
+
+1. Start the linux Virtual Machine. 
+
+On PC10, open the Oracle Virtual Box desktop application and start the linux virtual machine as shown in the image below:
+
+![image](/images/vmrunning.png)
+
+Sign in as `root` with password `easydbrules`.
+Now make sure the date is correct in the virtual machine or else updating the instance won't be possible. Check the date by run the command `date`. If the date is incorrect, run the command `sudo ntpdate ntp.ubuntu.com`, this will update the date against an ubuntu server.
+
+![image](/images/vmdate.png)
+
+2. Start Jenkins
+
+If PC10 was shut off before you started, then the Jenkins service is most likely running as the default system user. It is important that Jenkins is run as an admin user so that it may have access to other applications like chrome, firefox, ie, etc..
+
+Run the command `java -jar jenkins.war` in the directory shown below in the image.
+
+![image](/images/powershellcommand.png)
+
+3. Open Jenkins
+
+Go to the url `19.122.3.176:8080` where jenkins is being served by PC10. No login is necessary. Here you should see the homepage of the TestCafe project like the image below.
+
+![image](/images/jenkinshome.png)
+
+From here you can go to the project `easydb_test_suite` to see the whole workflow of the testcafe project.
+
+
+![image](/images/easydbtestsuitehome.png)
+
+Click the option `build now` to start, see the configuration, or view previous builds in the results list below. 
+
+
+4. Start XAMPP to serve the Test Screenshots
+
+Open XAMPP on PC10, click `start` next to the apache server.
 
 
 
@@ -49,7 +93,7 @@ Also its helpful for the Virtual Machine to have a static IP address, at the mom
 9. Run Jenkins Manually: stop the Jenkins service in `services.msc`, then restart Jenkins with command `java -jar jenkins.war` in directory "C:\Programm Files (x86)\Jenkins" , this allows Jenkins to have access to local files and directories (cygwin, chrome, firefox, etc) and is a *critical* step to the functionality of this project.
 11. Download Email-ext plugin for jenkins. In Manage Jenkins -> Configure System, under SMTP server, type `mail.programmfabrik.de`, under default recipients, type email to recieve test results, follow step [Email Template](#email-template) for further details. 
 10. (Optional) Download Multipjob Project plugin for jenkins if you want all projects to run sequentially. See [Running Sequentially](#running-sequentially) for more details.
-
+11. Download XAMPP to serve the screenshots on the local network. Download XAMPP, and set the root directory of the Apache Server to the direcotry where Testcafe is saving the screenshots.
 
 ### Installation/Steps
 
