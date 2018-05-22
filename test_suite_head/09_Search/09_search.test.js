@@ -46,10 +46,10 @@
         act.click(actionTarget);
     },"1.Take a screenshot": function() {act.screenshot();},
     "3.Click <i>": function() {
-        act.click('.cui-list-view-grid-quadrant [row="0"] [ez5-loca-key="search.type.selector.node.button.info"] .fa-info-circle');
+        act.click('.cui-list-view-grid-quadrant [row="0"] [ez5-loca-key="search.type.selector.node.button.info"] .svg-info-circle');
     },"1.Take a screenshot": function() {act.screenshot();},
     "4.Click <i>": function() {
-        act.click('.cui-list-view-grid-quadrant [row="1"] [ez5-loca-key="search.type.selector.node.button.info"] .fa-info-circle');
+        act.click('.cui-list-view-grid-quadrant [row="1"] [ez5-loca-key="search.type.selector.node.button.info"] .svg-info-circle');
     }
 };
 
