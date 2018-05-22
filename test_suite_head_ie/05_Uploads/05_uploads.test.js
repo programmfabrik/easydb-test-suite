@@ -138,7 +138,8 @@
         act.click(".cui-button[data-qa='editor-modal-new-next-button'] .cui-button-center");
     },"1.Take a screenshot": function() {act.screenshot();},
     '6.Click span "Abbrechen"': function() {
-        act.click('[data-qa="editor-cancel-button"] .cui-button-center');
+        act.click('[ez5-loca-key="editor.modal.close"] .svg-close');
+        // old : act.click('[data-qa="editor-cancel-button"] .cui-button-center');
     },"1.Take a screenshot": function() {act.screenshot();},
     '7.Click span "Verwerfen"': function() {
         act.click(":containsExcludeChildren(Verwerfen)");
