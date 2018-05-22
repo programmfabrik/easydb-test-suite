@@ -1,0 +1,2730 @@
+{
+    "schema": {
+        "type": "user",
+        "version": 2,
+        "based_on_version": 2,
+        "based_on_base_version": 192,
+        "max_table_id": 15,
+        "max_column_id": 33,
+        "tables": [
+            {
+                "name": "allefelder",
+                "table_id": 1,
+                "pool_link": false,
+                "acl_table": true,
+                "has_tags": true,
+                "is_hierarchical": false,
+                "in_main_search": true,
+                "comment": "Alle Felder die möglich sind",
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "einzeiligertext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 1
+                    },
+                    {
+                        "kind": "column",
+                        "name": "einzeiligertextmehrsprachig",
+                        "type": "text_l10n_oneline",
+                        "not_null": false,
+                        "column_id": 2
+                    },
+                    {
+                        "kind": "column",
+                        "name": "mehrzeiligertext",
+                        "type": "text",
+                        "not_null": false,
+                        "column_id": 3
+                    },
+                    {
+                        "kind": "column",
+                        "name": "mehrzeiligertextmehrprachig",
+                        "type": "text_l10n",
+                        "not_null": false,
+                        "column_id": 4
+                    },
+                    {
+                        "kind": "column",
+                        "name": "einfachertext",
+                        "type": "string",
+                        "not_null": false,
+                        "column_id": 5
+                    },
+                    {
+                        "kind": "column",
+                        "name": "datum",
+                        "type": "date",
+                        "not_null": false,
+                        "column_id": 6
+                    },
+                    {
+                        "kind": "column",
+                        "name": "datumbereich",
+                        "type": "daterange",
+                        "not_null": false,
+                        "column_id": 7
+                    },
+                    {
+                        "kind": "column",
+                        "name": "zahlganzzahlig",
+                        "type": "number",
+                        "not_null": false,
+                        "column_id": 8
+                    },
+                    {
+                        "kind": "column",
+                        "name": "kommazahl2stellen",
+                        "type": "integer.2",
+                        "not_null": false,
+                        "column_id": 9
+                    },
+                    {
+                        "kind": "column",
+                        "name": "datei",
+                        "type": "eas",
+                        "not_null": false,
+                        "column_id": 10
+                    },
+                    {
+                        "kind": "column",
+                        "name": "boolesch",
+                        "type": "boolean",
+                        "not_null": true,
+                        "column_id": 11
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "dateien",
+                "table_id": 2,
+                "pool_link": false,
+                "acl_table": false,
+                "has_tags": false,
+                "is_hierarchical": false,
+                "in_main_search": true,
+                "comment": "Dateien",
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "beschreibung",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 12
+                    },
+                    {
+                        "kind": "column",
+                        "name": "datei",
+                        "type": "eas",
+                        "not_null": false,
+                        "column_id": 13
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "daten_mit_schlagwort",
+                "table_id": 3,
+                "pool_link": false,
+                "acl_table": false,
+                "has_tags": false,
+                "is_hierarchical": false,
+                "in_main_search": true,
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "beschreibung",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 14
+                    },
+                    {
+                        "kind": "column",
+                        "name": "dateien",
+                        "type": "eas",
+                        "not_null": false,
+                        "column_id": 15
+                    },
+                    {
+                        "kind": "column",
+                        "name": "schlagwort",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 16
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": [
+                    {
+                        "name": "daten_mit_schlagwort__schlagwort__testcafe_schlagworter_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 16,
+                                "column_name_hint": "schlagwort"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 15,
+                            "name_hint": "testcafe_schlagworter",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "easfiletest",
+                "table_id": 4,
+                "pool_link": false,
+                "acl_table": false,
+                "has_tags": false,
+                "is_hierarchical": false,
+                "in_main_search": true,
+                "comment": "EAS File Test (DE)",
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "first",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 17
+                    },
+                    {
+                        "kind": "column",
+                        "name": "second",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 18
+                    },
+                    {
+                        "kind": "column",
+                        "name": "third",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 19
+                    },
+                    {
+                        "kind": "column",
+                        "name": "fourth",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 20
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": [
+                    {
+                        "name": "easfiletest__second__nestedeinfachflat_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 18,
+                                "column_name_hint": "second"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 5,
+                            "name_hint": "nestedeinfachflat",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "easfiletest__third__dateien_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 19,
+                                "column_name_hint": "third"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 2,
+                            "name_hint": "dateien",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "easfiletest__fourth__nestedmehrfachflat_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 20,
+                                "column_name_hint": "fourth"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 9,
+                            "name_hint": "nestedmehrfachflat",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedeinfachflat",
+                "table_id": 5,
+                "pool_link": false,
+                "acl_table": true,
+                "has_tags": true,
+                "is_hierarchical": false,
+                "in_main_search": true,
+                "comment": "Nested einfach Flat (DE)",
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "notnested",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 21
+                    },
+                    {
+                        "other_table_id": 6,
+                        "other_table_name_hint": "nestedeinfachflat__nestedfeld",
+                        "kind": "link"
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "nestedeinfachflat__nestedfeld",
+                "table_id": 6,
+                "owned_by": {
+                    "other_table_id": 5,
+                    "other_table_name_hint": "nestedeinfachflat"
+                },
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "nestedlinkedallefelder",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 22
+                    },
+                    {
+                        "kind": "column",
+                        "name": "nestedeinztext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 23
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": [
+                    {
+                        "name": "nestedeinfachflat__nestedfeld__nestedlink:0392aba57deec89c_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 22,
+                                "column_name_hint": "nestedlinkedallefelder"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 1,
+                            "name_hint": "allefelder",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedeinfachhierarchisch",
+                "table_id": 7,
+                "pool_link": false,
+                "acl_table": true,
+                "has_tags": true,
+                "is_hierarchical": true,
+                "in_main_search": true,
+                "comment": "Nested einfach Hierarchisch (DE)",
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "notnested",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 24
+                    },
+                    {
+                        "other_table_id": 8,
+                        "other_table_name_hint": "nestedeinfachhierarchisch__nestedfeld",
+                        "kind": "link"
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "nestedeinfachhierarchisch__nestedfeld",
+                "table_id": 8,
+                "owned_by": {
+                    "other_table_id": 7,
+                    "other_table_name_hint": "nestedeinfachhierarchisch"
+                },
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "nestedlinkedallefelder",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 25
+                    },
+                    {
+                        "kind": "column",
+                        "name": "nestedeinztext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 26
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": [
+                    {
+                        "name": "nestedeinfachhierarchisch__nestedfeld__ne:3289a87d8d80c798_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 25,
+                                "column_name_hint": "nestedlinkedallefelder"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 1,
+                            "name_hint": "allefelder",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedmehrfachflat",
+                "table_id": 9,
+                "pool_link": false,
+                "acl_table": true,
+                "has_tags": true,
+                "is_hierarchical": false,
+                "in_main_search": true,
+                "comment": "Nested Mehrfach Flat (DE)",
+                "columns": [
+                    {
+                        "other_table_id": 10,
+                        "other_table_name_hint": "nestedmehrfachflat__outernested",
+                        "kind": "link"
+                    },
+                    {
+                        "kind": "column",
+                        "name": "outernestedtext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 27
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "nestedmehrfachflat__outernested",
+                "table_id": 10,
+                "owned_by": {
+                    "other_table_id": 9,
+                    "other_table_name_hint": "nestedmehrfachflat"
+                },
+                "columns": [
+                    {
+                        "other_table_id": 11,
+                        "other_table_name_hint": "nestedmehrfachflat__outernested__secondnested",
+                        "kind": "link"
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "nestedmehrfachflat__outernested__secondnested",
+                "table_id": 11,
+                "owned_by": {
+                    "other_table_id": 10,
+                    "other_table_name_hint": "nestedmehrfachflat__outernested"
+                },
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "nestedlinkedallefelder",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 28
+                    },
+                    {
+                        "kind": "column",
+                        "name": "nestedeinztext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 29
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": [
+                    {
+                        "name": "nestedmehrfachflat__outernested__secondne:b9ddd2ea7e5ccb94_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 28,
+                                "column_name_hint": "nestedlinkedallefelder"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 1,
+                            "name_hint": "allefelder",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedmehrfachhierarchisch",
+                "table_id": 12,
+                "pool_link": false,
+                "acl_table": true,
+                "has_tags": true,
+                "is_hierarchical": true,
+                "in_main_search": true,
+                "comment": "Nested Mehrfach Hierarchisch (DE)",
+                "columns": [
+                    {
+                        "other_table_id": 13,
+                        "other_table_name_hint": "nestedmehrfachhierarchisch__outernested",
+                        "kind": "link"
+                    },
+                    {
+                        "kind": "column",
+                        "name": "outernestedtext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 30
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "nestedmehrfachhierarchisch__outernested",
+                "table_id": 13,
+                "owned_by": {
+                    "other_table_id": 12,
+                    "other_table_name_hint": "nestedmehrfachhierarchisch"
+                },
+                "columns": [
+                    {
+                        "other_table_id": 14,
+                        "other_table_name_hint": "nestedmehrfachhierarchisch__outernested__secondnested",
+                        "kind": "link"
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            },
+            {
+                "name": "nestedmehrfachhierarchisch__outernested__secondnested",
+                "table_id": 14,
+                "owned_by": {
+                    "other_table_id": 13,
+                    "other_table_name_hint": "nestedmehrfachhierarchisch__outernested"
+                },
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "nestedlinkedallefelder",
+                        "type": "link",
+                        "not_null": false,
+                        "column_id": 31
+                    },
+                    {
+                        "kind": "column",
+                        "name": "nestedeinztext",
+                        "type": "text_oneline",
+                        "not_null": false,
+                        "column_id": 32
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": [
+                    {
+                        "name": "nestedmehrfachhierarchisch__outernested__:4d86b7c6b9f56542_fkey",
+                        "on_delete": "restrict",
+                        "on_update": "cascade",
+                        "columns": [
+                            {
+                                "column_id": 31,
+                                "column_name_hint": "nestedlinkedallefelder"
+                            }
+                        ],
+                        "referenced_table": {
+                            "table_id": 1,
+                            "name_hint": "allefelder",
+                            "columns": [
+                                {
+                                    "auto_column_primary_key": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "testcafe_schlagworter",
+                "table_id": 15,
+                "pool_link": false,
+                "acl_table": false,
+                "has_tags": false,
+                "is_hierarchical": true,
+                "in_main_search": true,
+                "columns": [
+                    {
+                        "kind": "column",
+                        "name": "name",
+                        "type": "text",
+                        "not_null": false,
+                        "column_id": 33
+                    }
+                ],
+                "unique_keys": [],
+                "foreign_keys": []
+            }
+        ],
+        "l10n_languages": []
+    },
+    "mask": {
+        "type": "user",
+        "version": 1,
+        "based_on_schema_version": 2,
+        "max_mask_id": 9,
+        "masks": [
+            {
+                "name": "allefelder__all_fields",
+                "mask_id": 1,
+                "table_id": 1,
+                "table_name_hint": "allefelder",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "einzeiligertext",
+                        "column_id": 1,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "einzeiligertextmehrsprachig",
+                        "column_id": 2,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "mehrzeiligertext",
+                        "column_id": 3,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "mehrzeiligertextmehrprachig",
+                        "column_id": 4,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "einfachertext",
+                        "column_id": 5,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "datum",
+                        "column_id": 6,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "datumbereich",
+                        "column_id": 7,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "zahlganzzahlig",
+                        "column_id": 8,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "kommazahl2stellen",
+                        "column_id": 9,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "datei",
+                        "column_id": 10,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "boolesch",
+                        "column_id": 11,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "dateien__all_fields",
+                "mask_id": 2,
+                "table_id": 2,
+                "table_name_hint": "dateien",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "beschreibung",
+                        "column_id": 12,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "datei",
+                        "column_id": 13,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "daten_mit_schlagwort__all_fields",
+                "mask_id": 3,
+                "table_id": 3,
+                "table_name_hint": "daten_mit_schlagwort",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "beschreibung",
+                        "column_id": 14,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "dateien",
+                        "column_id": 15,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "inline": "standard",
+                        "mask_id": "PREFERRED",
+                        "column_id": 16,
+                        "other_table_id": 15,
+                        "kind": "link",
+                        "column_name_hint": "schlagwort",
+                        "other_table_name_hint": "testcafe_schlagworter",
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": false
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "easfiletest__all_fields",
+                "mask_id": 4,
+                "table_id": 4,
+                "table_name_hint": "easfiletest",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "first",
+                        "column_id": 17,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "inline": "standard",
+                        "mask_id": "PREFERRED",
+                        "column_id": 18,
+                        "other_table_id": 5,
+                        "kind": "link",
+                        "column_name_hint": "second",
+                        "other_table_name_hint": "nestedeinfachflat",
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": false
+                        }
+                    },
+                    {
+                        "inline": "standard",
+                        "mask_id": "PREFERRED",
+                        "column_id": 19,
+                        "other_table_id": 2,
+                        "kind": "link",
+                        "column_name_hint": "third",
+                        "other_table_name_hint": "dateien",
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": false
+                        }
+                    },
+                    {
+                        "inline": "standard",
+                        "mask_id": "PREFERRED",
+                        "column_id": 20,
+                        "other_table_id": 9,
+                        "kind": "link",
+                        "column_name_hint": "fourth",
+                        "other_table_name_hint": "nestedmehrfachflat",
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": false
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedeinfachflat__all_fields",
+                "mask_id": 5,
+                "table_id": 5,
+                "table_name_hint": "nestedeinfachflat",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "notnested",
+                        "column_id": 21,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "linked-table",
+                        "other_table_name_hint": "nestedeinfachflat__nestedfeld",
+                        "other_table_id": 6,
+                        "mask": {
+                            "table_id": 6,
+                            "table_name_hint": "nestedeinfachflat__nestedfeld",
+                            "is_preferred": false,
+                            "comment": "",
+                            "fields": [
+                                {
+                                    "inline": "standard",
+                                    "mask_id": "PREFERRED",
+                                    "column_id": 22,
+                                    "other_table_id": 1,
+                                    "kind": "link",
+                                    "column_name_hint": "nestedlinkedallefelder",
+                                    "other_table_name_hint": "allefelder",
+                                    "edit": {
+                                        "mode": "edit",
+                                        "group_edit": true
+                                    },
+                                    "output": {
+                                        "detail": true,
+                                        "text": false,
+                                        "table": false,
+                                        "standard": {
+                                            "design": "normal",
+                                            "format": "comma"
+                                        },
+                                        "standard_eas": {}
+                                    },
+                                    "search": {
+                                        "expert": true,
+                                        "fulltext": true,
+                                        "facet": true,
+                                        "nested": false
+                                    }
+                                },
+                                {
+                                    "kind": "field",
+                                    "column_name_hint": "nestedeinztext",
+                                    "column_id": 23,
+                                    "edit": {
+                                        "mode": "edit",
+                                        "group_edit": true
+                                    },
+                                    "output": {
+                                        "detail": true,
+                                        "text": false,
+                                        "table": false,
+                                        "standard": {
+                                            "design": "normal",
+                                            "format": "comma",
+                                            "order": 1
+                                        },
+                                        "standard_eas": {}
+                                    },
+                                    "search": {
+                                        "expert": true,
+                                        "fulltext": true,
+                                        "facet": true,
+                                        "nested": true
+                                    }
+                                }
+                            ]
+                        },
+                        "edit": {
+                            "mode": "edit",
+                            "append_only": false,
+                            "as_table": false,
+                            "show_labels": false
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": false,
+                            "facet": false,
+                            "nested": false
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedeinfachhierarchisch__all_fields",
+                "mask_id": 6,
+                "table_id": 7,
+                "table_name_hint": "nestedeinfachhierarchisch",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "notnested",
+                        "column_id": 24,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    },
+                    {
+                        "kind": "linked-table",
+                        "other_table_name_hint": "nestedeinfachhierarchisch__nestedfeld",
+                        "other_table_id": 8,
+                        "mask": {
+                            "table_id": 8,
+                            "table_name_hint": "nestedeinfachhierarchisch__nestedfeld",
+                            "is_preferred": false,
+                            "comment": "",
+                            "fields": [
+                                {
+                                    "inline": "standard",
+                                    "mask_id": "PREFERRED",
+                                    "column_id": 25,
+                                    "other_table_id": 1,
+                                    "kind": "link",
+                                    "column_name_hint": "nestedlinkedallefelder",
+                                    "other_table_name_hint": "allefelder",
+                                    "edit": {
+                                        "mode": "edit",
+                                        "group_edit": true
+                                    },
+                                    "output": {
+                                        "detail": true,
+                                        "text": false,
+                                        "table": false,
+                                        "standard": {
+                                            "design": "normal",
+                                            "format": "comma"
+                                        },
+                                        "standard_eas": {}
+                                    },
+                                    "search": {
+                                        "expert": true,
+                                        "fulltext": true,
+                                        "facet": true,
+                                        "nested": false
+                                    }
+                                },
+                                {
+                                    "kind": "field",
+                                    "column_name_hint": "nestedeinztext",
+                                    "column_id": 26,
+                                    "edit": {
+                                        "mode": "edit",
+                                        "group_edit": true
+                                    },
+                                    "output": {
+                                        "detail": true,
+                                        "text": false,
+                                        "table": false,
+                                        "standard": {
+                                            "design": "normal",
+                                            "format": "comma",
+                                            "order": 1
+                                        },
+                                        "standard_eas": {}
+                                    },
+                                    "search": {
+                                        "expert": true,
+                                        "fulltext": true,
+                                        "facet": true,
+                                        "nested": true
+                                    }
+                                }
+                            ]
+                        },
+                        "edit": {
+                            "mode": "edit",
+                            "append_only": false,
+                            "as_table": false,
+                            "show_labels": false
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": false,
+                            "facet": false,
+                            "nested": false
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedmehrfachflat__all_fields",
+                "mask_id": 7,
+                "table_id": 9,
+                "table_name_hint": "nestedmehrfachflat",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "linked-table",
+                        "other_table_name_hint": "nestedmehrfachflat__outernested",
+                        "other_table_id": 10,
+                        "mask": {
+                            "table_id": 10,
+                            "table_name_hint": "nestedmehrfachflat__outernested",
+                            "is_preferred": false,
+                            "comment": "",
+                            "fields": [
+                                {
+                                    "kind": "linked-table",
+                                    "other_table_name_hint": "nestedmehrfachflat__outernested__secondnested",
+                                    "other_table_id": 11,
+                                    "mask": {
+                                        "table_id": 11,
+                                        "table_name_hint": "nestedmehrfachflat__outernested__secondnested",
+                                        "is_preferred": false,
+                                        "comment": "",
+                                        "fields": [
+                                            {
+                                                "inline": "standard",
+                                                "mask_id": "PREFERRED",
+                                                "column_id": 28,
+                                                "other_table_id": 1,
+                                                "kind": "link",
+                                                "column_name_hint": "nestedlinkedallefelder",
+                                                "other_table_name_hint": "allefelder",
+                                                "edit": {
+                                                    "mode": "edit",
+                                                    "group_edit": true
+                                                },
+                                                "output": {
+                                                    "detail": true,
+                                                    "text": false,
+                                                    "table": false,
+                                                    "standard": {
+                                                        "design": "normal",
+                                                        "format": "comma"
+                                                    },
+                                                    "standard_eas": {}
+                                                },
+                                                "search": {
+                                                    "expert": true,
+                                                    "fulltext": true,
+                                                    "facet": true,
+                                                    "nested": false
+                                                }
+                                            },
+                                            {
+                                                "kind": "field",
+                                                "column_name_hint": "nestedeinztext",
+                                                "column_id": 29,
+                                                "edit": {
+                                                    "mode": "edit",
+                                                    "group_edit": true
+                                                },
+                                                "output": {
+                                                    "detail": true,
+                                                    "text": false,
+                                                    "table": false,
+                                                    "standard": {
+                                                        "design": "normal",
+                                                        "format": "comma",
+                                                        "order": 1
+                                                    },
+                                                    "standard_eas": {}
+                                                },
+                                                "search": {
+                                                    "expert": true,
+                                                    "fulltext": true,
+                                                    "facet": true,
+                                                    "nested": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "edit": {
+                                        "mode": "edit",
+                                        "append_only": false,
+                                        "as_table": false,
+                                        "show_labels": false
+                                    },
+                                    "output": {
+                                        "detail": true,
+                                        "text": false,
+                                        "table": false,
+                                        "standard": {
+                                            "design": "normal",
+                                            "format": "comma"
+                                        },
+                                        "standard_eas": {}
+                                    },
+                                    "search": {
+                                        "expert": true,
+                                        "fulltext": false,
+                                        "facet": false,
+                                        "nested": false
+                                    }
+                                }
+                            ]
+                        },
+                        "edit": {
+                            "mode": "edit",
+                            "append_only": false,
+                            "as_table": false,
+                            "show_labels": false
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": false,
+                            "facet": false,
+                            "nested": false
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "outernestedtext",
+                        "column_id": 27,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "nestedmehrfachhierarchisch__all_fields",
+                "mask_id": 8,
+                "table_id": 12,
+                "table_name_hint": "nestedmehrfachhierarchisch",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "linked-table",
+                        "other_table_name_hint": "nestedmehrfachhierarchisch__outernested",
+                        "other_table_id": 13,
+                        "mask": {
+                            "table_id": 13,
+                            "table_name_hint": "nestedmehrfachhierarchisch__outernested",
+                            "is_preferred": false,
+                            "comment": "",
+                            "fields": [
+                                {
+                                    "kind": "linked-table",
+                                    "other_table_name_hint": "nestedmehrfachhierarchisch__outernested__secondnested",
+                                    "other_table_id": 14,
+                                    "mask": {
+                                        "table_id": 14,
+                                        "table_name_hint": "nestedmehrfachhierarchisch__outernested__secondnested",
+                                        "is_preferred": false,
+                                        "comment": "",
+                                        "fields": [
+                                            {
+                                                "inline": "standard",
+                                                "mask_id": "PREFERRED",
+                                                "column_id": 31,
+                                                "other_table_id": 1,
+                                                "kind": "link",
+                                                "column_name_hint": "nestedlinkedallefelder",
+                                                "other_table_name_hint": "allefelder",
+                                                "edit": {
+                                                    "mode": "edit",
+                                                    "group_edit": true
+                                                },
+                                                "output": {
+                                                    "detail": true,
+                                                    "text": false,
+                                                    "table": false,
+                                                    "standard": {
+                                                        "design": "normal",
+                                                        "format": "comma"
+                                                    },
+                                                    "standard_eas": {}
+                                                },
+                                                "search": {
+                                                    "expert": true,
+                                                    "fulltext": true,
+                                                    "facet": true,
+                                                    "nested": false
+                                                }
+                                            },
+                                            {
+                                                "kind": "field",
+                                                "column_name_hint": "nestedeinztext",
+                                                "column_id": 32,
+                                                "edit": {
+                                                    "mode": "edit",
+                                                    "group_edit": true
+                                                },
+                                                "output": {
+                                                    "detail": true,
+                                                    "text": false,
+                                                    "table": false,
+                                                    "standard": {
+                                                        "design": "normal",
+                                                        "format": "comma",
+                                                        "order": 1
+                                                    },
+                                                    "standard_eas": {}
+                                                },
+                                                "search": {
+                                                    "expert": true,
+                                                    "fulltext": true,
+                                                    "facet": true,
+                                                    "nested": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "edit": {
+                                        "mode": "edit",
+                                        "append_only": false,
+                                        "as_table": false,
+                                        "show_labels": false
+                                    },
+                                    "output": {
+                                        "detail": true,
+                                        "text": false,
+                                        "table": false,
+                                        "standard": {
+                                            "design": "normal",
+                                            "format": "comma"
+                                        },
+                                        "standard_eas": {}
+                                    },
+                                    "search": {
+                                        "expert": true,
+                                        "fulltext": false,
+                                        "facet": false,
+                                        "nested": false
+                                    }
+                                }
+                            ]
+                        },
+                        "edit": {
+                            "mode": "edit",
+                            "append_only": false,
+                            "as_table": false,
+                            "show_labels": false
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma"
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": false,
+                            "facet": false,
+                            "nested": false
+                        }
+                    },
+                    {
+                        "kind": "field",
+                        "column_name_hint": "outernestedtext",
+                        "column_id": 30,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "testcafe_schlagworter__all_fields",
+                "mask_id": 9,
+                "table_id": 15,
+                "table_name_hint": "testcafe_schlagworter",
+                "is_preferred": true,
+                "comment": "",
+                "system_fields": {
+                    "parent": {
+                        "inline": "standard",
+                        "mask_id": "SAME",
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "object_id": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "tags": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "acl": {
+                        "output": {
+                            "mode": "show"
+                        },
+                        "edit": {
+                            "mode": "edit"
+                        }
+                    },
+                    "owner": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    },
+                    "pool": {
+                        "output": {
+                            "mode": "show"
+                        }
+                    },
+                    "collections": {
+                        "output": {
+                            "mode": "off"
+                        },
+                        "edit": {
+                            "mode": "off"
+                        }
+                    }
+                },
+                "fields": [
+                    {
+                        "kind": "field",
+                        "column_name_hint": "name",
+                        "column_id": 33,
+                        "edit": {
+                            "mode": "edit",
+                            "group_edit": true
+                        },
+                        "output": {
+                            "detail": true,
+                            "text": false,
+                            "table": false,
+                            "standard": {
+                                "design": "normal",
+                                "format": "comma",
+                                "order": 1
+                            },
+                            "standard_eas": {}
+                        },
+                        "search": {
+                            "expert": true,
+                            "fulltext": true,
+                            "facet": true,
+                            "nested": true
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "keys": {
+        "schema.allefelder.column.boolesch": {
+            "en-US": "Boolesch (DE)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Boolesch (DE)"
+        },
+        "mask.12.nestedmehrfachhierarchisch__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.nestedeinfachhierarchisch__nestedfeld.name": {
+            "en-US": "Nested Feld (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested Feld (DE)"
+        },
+        "schema.allefelder.column.einfachertext": {
+            "en-US": "Einfacher Text (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Einfacher Text (DE)"
+        },
+        "schema.nestedeinfachhierarchisch.column.nestedeinfachhierarchisch__nestedfeld": {
+            "en-US": "Nested Feld (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested Feld (DE)"
+        },
+        "schema.dateien.column.beschreibung": {
+            "en-US": "Beschreibung (DE)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Beschreibung (DE)"
+        },
+        "schema.nestedeinfachflat.column.nestedeinfachflat__nestedfeld": {
+            "en-US": "Nested Feld (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested Feld (DE)"
+        },
+        "schema.allefelder.column.mehrzeiligertextmehrprachig": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Mehrzeiliger Text (mehrprachig) (US)"
+        },
+        "schema.allefelder.column.einzeiligertext": {
+            "en-US": "Einzeiliger Text (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Einzeiliger Text (DE)"
+        },
+        "schema.allefelder.column.datum": {
+            "en-US": "Datum (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Datum (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch__outernested.name": {
+            "en-US": "Outer Nested (DE)",
+            "_comment": "",
+            "it-IT": "Outer Nested (DE)",
+            "de-DE": "Outer Nested (DE)",
+            "es-ES": "Outer Nested (DE)"
+        },
+        "schema.daten_mit_schlagwort.name": {
+            "en-US": "Dateien mit schlagwort",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Dateien mit schlagwort"
+        },
+        "schema.nestedeinfachflat.column.notnested": {
+            "en-US": "Not Nested (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Not Nested (DE)"
+        },
+        "mask.5.nestedeinfachflat__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.allefelder.column.datumbereich": {
+            "en-US": "Datum (Bereich) (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Datum (Bereich) (DE)"
+        },
+        "schema.nestedmehrfachflat.column.nestedmehrfachflat__outernested": {
+            "en-US": "Outer Nested (DE)",
+            "_comment": "",
+            "it-IT": "Outer Nested (DE)",
+            "de-DE": "Outer Nested (DE)",
+            "es-ES": "Outer Nested (DE)"
+        },
+        "mask.4.easfiletest__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.dateien.name": {
+            "en-US": "Dateien (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Dateien (DE)"
+        },
+        "mask.2.dateien__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.nestedeinfachhierarchisch.column.notnested": {
+            "en-US": "Not Nested (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Not Nested (DE)"
+        },
+        "schema.nestedmehrfachflat__outernested__secondnested.column.nestedeinztext": {
+            "en-US": "Nested einzeilger Text (DE)",
+            "_comment": "",
+            "it-IT": "Nested einzeilger Text (DE)",
+            "de-DE": "Nested einzeilger Text (DE)",
+            "es-ES": "Nested einzeilger Text (DE)"
+        },
+        "mask.7.nestedeinfachhierarchisch__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "mask.9.nestedmehrfachflat__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.nestedeinfachflat.name": {
+            "en-US": "Nested einfach Flat (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested einfach Flat (DE)"
+        },
+        "schema.allefelder.name": {
+            "en-US": "Alle Felder (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Alle Felder (DE)"
+        },
+        "schema.easfiletest.column.fourth": {
+            "en-US": "Fourth (DE)",
+            "_comment": "",
+            "it-IT": "Fourth (DE)",
+            "de-DE": "Fourth (DE)",
+            "es-ES": "Fourth (DE)"
+        },
+        "schema.allefelder.column.mehrzeiligertext": {
+            "en-US": "Mehrzeiliger Text (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Mehrzeiliger Text (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch.column.outernestedtext": {
+            "en-US": "Outer Nested Text (DE)",
+            "_comment": "",
+            "it-IT": "Outer Nested Text (DE)",
+            "de-DE": "Outer Nested Text (DE)",
+            "es-ES": "Outer Nested Text (DE)"
+        },
+        "mask.1.allefelder__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.nestedmehrfachflat__outernested__secondnested.name": {
+            "en-US": "Second Nested (DE)",
+            "_comment": "",
+            "it-IT": "Second Nested (DE)",
+            "de-DE": "Second Nested (DE)",
+            "es-ES": "Second Nested (DE)"
+        },
+        "schema.easfiletest.column.first": {
+            "en-US": "First (DE)",
+            "_comment": "",
+            "it-IT": "First (DE)",
+            "de-DE": "First (DE)",
+            "es-ES": "First (DE)"
+        },
+        "schema.allefelder.column.kommazahl2stellen": {
+            "en-US": "Kommazahl (2 Stellen) (DE)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Kommazahl (2 Stellen) (DE)"
+        },
+        "schema.easfiletest.name": {
+            "en-US": "EAS File Test (DE)",
+            "_comment": "",
+            "it-IT": "EAS File Test (DE)",
+            "de-DE": "EAS File Test (DE)",
+            "es-ES": "EAS File Test (DE)"
+        },
+        "schema.allefelder.column.zahlganzzahlig": {
+            "en-US": "Zahl (ganzzahlig) (DE)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Zahl (ganzzahlig) (DE)"
+        },
+        "schema.nestedmehrfachflat__outernested.column.nestedmehrfachflat__outernested__secondnested": {
+            "en-US": "Second Nested (DE)",
+            "_comment": "",
+            "it-IT": "Second Nested (DE)",
+            "de-DE": "Second Nested (DE)",
+            "es-ES": "Second Nested (DE)"
+        },
+        "mask.15.testcafe_schlagworter__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "mask.3.daten_mit_schlagwort__all_fields.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Standard"
+        },
+        "schema.nestedmehrfachhierarchisch.column.nestedmehrfachhierarchisch__outernested": {
+            "en-US": "Outer Nested (DE)",
+            "_comment": "",
+            "it-IT": "Outer Nested (DE)",
+            "de-DE": "Outer Nested (DE)",
+            "es-ES": "Outer Nested (DE)"
+        },
+        "schema.easfiletest.column.second": {
+            "en-US": "Second (DE)",
+            "_comment": "",
+            "it-IT": "Second (DE)",
+            "de-DE": "Second (DE)",
+            "es-ES": "Second (DE)"
+        },
+        "schema.dateien.column.datei": {
+            "en-US": "Datei (DE)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Datei (DE)"
+        },
+        "schema.allefelder.column.datei": {
+            "en-US": "Datei (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Datei (DE)"
+        },
+        "schema.allefelder.column.einzeiligertextmehrsprachig": {
+            "en-US": "Einzeiliger Text (mehrsprachig) (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Einzeiliger Text (mehrsprachig) (DE)"
+        },
+        "schema.nestedeinfachhierarchisch.name": {
+            "en-US": "Nested einfach Hierarchisch (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested einfach Hierarchisch (DE)"
+        },
+        "schema.daten_mit_schlagwort.column.beschreibung": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": ""
+        },
+        "schema.nestedmehrfachflat__outernested__secondnested.column.nestedlinkedallefelder": {
+            "en-US": "Nested linked Alle Felder (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested linked Alle Felder (DE)"
+        },
+        "schema.daten_mit_schlagwort.column.dateien": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": ""
+        },
+        "schema.daten_mit_schlagwort.column.schlagwort": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": ""
+        },
+        "schema.nestedmehrfachflat.column.outernestedtext": {
+            "en-US": "Outer Nested Text (DE)",
+            "_comment": "",
+            "it-IT": "Outer Nested Text (DE)",
+            "de-DE": "Outer Nested Text (DE)",
+            "es-ES": "Outer Nested Text (DE)"
+        },
+        "schema.easfiletest.column.third": {
+            "en-US": "Third (DE)",
+            "_comment": "",
+            "it-IT": "Third (DE)",
+            "de-DE": "Third (DE)",
+            "es-ES": "Third (DE)"
+        },
+        "schema.nestedeinfachflat__nestedfeld.name": {
+            "en-US": "Nested Feld (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested Feld (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch__outernested.column.nestedmehrfachhierarchisch__outernested__secondnested": {
+            "en-US": "Second Nested (DE)",
+            "_comment": "",
+            "it-IT": "Second Nested (DE)",
+            "de-DE": "Second Nested (DE)",
+            "es-ES": "Second Nested (DE)"
+        },
+        "schema.nestedeinfachflat__nestedfeld.column.nestedlinkedallefelder": {
+            "en-US": "Nested linked Alle Felder (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested linked Alle Felder (DE)"
+        },
+        "schema.nestedmehrfachflat.name": {
+            "en-US": "Nested Mehrfach Flat (DE)",
+            "_comment": "",
+            "it-IT": "Nested Mehrfach Flat (DE)",
+            "de-DE": "Nested Mehrfach Flat (DE)",
+            "es-ES": "Nested Mehrfach Flat (DE)"
+        },
+        "schema.nestedeinfachhierarchisch__nestedfeld.column.nestedeinztext": {
+            "en-US": "Nested einzeilger Text (DE)",
+            "_comment": "",
+            "it-IT": "Nested einzeilger Text (DE)",
+            "de-DE": "Nested einzeilger Text (DE)",
+            "es-ES": "Nested einzeilger Text (DE)"
+        },
+        "schema.nestedeinfachflat__nestedfeld.column.nestedeinztext": {
+            "en-US": "Nested einzeilger Text (DE)",
+            "_comment": "",
+            "it-IT": "Nested einzeilger Text (DE)",
+            "de-DE": "Nested einzeilger Text (DE)",
+            "es-ES": "Nested einzeilger Text (DE)"
+        },
+        "schema.nestedeinfachhierarchisch__nestedfeld.column.nestedlinkedallefelder": {
+            "en-US": "Nested linked Alle Felder (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested linked Alle Felder (DE)"
+        },
+        "schema.nestedmehrfachflat__outernested.name": {
+            "en-US": "Outer Nested (DE)",
+            "_comment": "",
+            "it-IT": "Outer Nested (DE)",
+            "de-DE": "Outer Nested (DE)",
+            "es-ES": "Outer Nested (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch.name": {
+            "en-US": "Nested Mehrfach Hierarchisch (DE)",
+            "_comment": "",
+            "it-IT": "Nested Mehrfach Hierarchisch (DE)",
+            "de-DE": "Nested Mehrfach Hierarchisch (DE)",
+            "es-ES": "Nested Mehrfach Hierarchisch (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch__outernested__secondnested.column.nestedeinztext": {
+            "en-US": "Nested einzeilger Text (DE)",
+            "_comment": "",
+            "it-IT": "Nested einzeilger Text (DE)",
+            "de-DE": "Nested einzeilger Text (DE)",
+            "es-ES": "Nested einzeilger Text (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch__outernested__secondnested.column.nestedlinkedallefelder": {
+            "en-US": "Nested linked Alle Felder (US)",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "Nested linked Alle Felder (DE)"
+        },
+        "schema.nestedmehrfachhierarchisch__outernested__secondnested.name": {
+            "en-US": "Second Nested (DE)",
+            "_comment": "",
+            "it-IT": "Second Nested (DE)",
+            "de-DE": "Second Nested (DE)",
+            "es-ES": "Second Nested (DE)"
+        },
+        "schema.testcafe_schlagworter.column.name": {
+            "en-US": "",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": ""
+        },
+        "schema.testcafe_schlagworter.name": {
+            "en-US": "TestCafe Schlagworter",
+            "_comment": "",
+            "it-IT": "",
+            "de-DE": "TestCafe Schlagworter"
+        }
+    },
+    "version": 2,
+    "format_version": 1
+}
